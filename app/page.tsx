@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -324,7 +325,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
-                <li><a className="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/#demo">Chamber Demo</a></li>
+                <li><Link className="text-gray-400 hover:text-cyan-400 text-sm transition-colors" href="/#demo">Chamber Demo</Link></li>
                 <li>
                   <a href="https://shhtarknet.github.io/mist" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors inline-flex items-center gap-1">
                     MIST Ledger
