@@ -22,8 +22,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.19.6",
