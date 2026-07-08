@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-950: #060b18;
+  --color-navy-900: #0c1324;
+  --color-navy-800: #111827;
+  --color-navy-700: #1a2236;
+  --color-navy-600: #243049;
+  --color-cyan-400: #00e5ff;
+  --color-cyan-500: #00b8d4;
+  --color-cyan-600: #0097a7;
+  --color-cyan-glow: rgba(0, 229, 255, 0.15);
+  --color-danger: #ef4444;
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+  --color-warning: #f59e0b;
+  --color-success: #22c55e;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  --cyan-to-red-filter: hue-rotate(-179deg) brightness(71%) contrast(200%);
+}
+
+body {
+  background: var(--color-navy-950);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+}
+
+/* Skip navigation */
+.skip-nav {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-cyan-400);
+  color: var(--color-navy-950);
+  font-weight: 600;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-nav:focus {
+  left: 0;
+  top: 0;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-cyan-400);
+  outline-offset: 2px;
+}
+
+/* Glow effects */
+.cyan-glow {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15), 0 0 60px rgba(0, 229, 255, 0.05);
+}
+
+.cyan-glow-strong {
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.25), 0 0 80px rgba(0, 229, 255, 0.1);
+}
+
+.danger-glow {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.15), 0 0 60px rgba(239, 68, 68, 0.05);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+/* Gradient text utility */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Stat card animation */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.25);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Horizontal rule styling */
+.divider-cyan {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.3), transparent);
+}
+
+.testimonial-tweets .react-tweet-theme {
+  max-width: 32em;
+  margin: 0 auto;
+  --tweet-body-font-size: 0.875rem;
+  --tweet-quoted-body-font-size: 0.875rem;
+
+  p {
+    max-height: 4.5em;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
+  [class*='tweet-info'],
+  [class*='tweet-actions'],
+  [class*='tweet-replies'],
+  [class*='quoted-tweet-container'] {
+    display: none;
+  }
+
+  [class*='quoted-tweet-container'] {
+    [class*='tweet-media'] {
+      display: none;
+    }
+  }
+}

@@ -1,27 +1,42 @@
 {
-  "name": "mist-landing",
+  "name": "landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
+    "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "deploy": "next build && npx gh-pages --nojekyll --dotfiles -d out -r https://github.com/mistcash/landing.git",
+    "dep": "next build && npx gh-pages --nojekyll --dotfiles -d out",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "next": "^16.2.10",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "lucide-react": "^0.534.0",
+    "next": "^15.5.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-tweet": "^3.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.2",
-    "@types/node": "^26.1.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "eslint": "^9",
-    "eslint-config-next": "^16.2.10",
-    "postcss": "^8.5.16",
-    "tailwindcss": "^4.3.2",
-    "typescript": "^6.0.3"
+    "@eslint/eslintrc": "^3.3.3",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.19.6",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^15.5.9",
+    "gh-pages": "^6.3.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "29.7.0",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^4.1.18",
+    "ts-jest": "^29.4.6",
+    "typescript": "5.9.2"
   }
 }
