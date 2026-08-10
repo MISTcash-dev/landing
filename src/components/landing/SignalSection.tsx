@@ -3,13 +3,13 @@ import SectionHeading from "./SectionHeading";
 import TweetEmbed from "./TweetEmbed";
 
 const tweets = [
-  { id: "2017258450435142037", author: "ikubjas" },
-  { id: "2017013736502866210", author: "ExpatCrypto3" },
-  { id: "2017020644928422262", author: "LauraM10g" },
-  { id: "2001166694572810503", author: "akashneelesh" },
-  { id: "1992295027394146593", author: "AbdelStark" },
-  { id: "1992255142939472293", author: "jonatanChaverri" },
-  { id: "1992238899989770648", author: "barretodavid" },
+  "2017258450435142037",
+  "2017013736502866210",
+  "2017020644928422262",
+  "2001166694572810503",
+  "1992295027394146593",
+  "1992255142939472293",
+  "1992238899989770648",
 ];
 
 export default function SignalSection() {
@@ -23,8 +23,8 @@ export default function SignalSection() {
         />
         <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
           {tweets.map((t) => (
-            <div key={t.id} className="mb-6 break-inside-avoid">
-              <TweetEmbed id={t.id} author={t.author} />
+            <div key={t} className="mb-6 break-inside-avoid">
+              <TweetEmbed id={t} />
             </div>
           ))}
         </div>

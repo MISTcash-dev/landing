@@ -29,7 +29,7 @@ const features = [
   {
     title: "Private by default",
     detail:
-      "Every transfer proves validity with a ZK proof. No one — including the operator — sees sender, receiver, or amount.",
+      "Every transfer proves validity with a ZK proof. Note contents stay private in the circuit; on-chain withdrawals still publish the destination and withdrawal fields required for settlement.",
   },
   {
     title: "Cross-chain USDC",

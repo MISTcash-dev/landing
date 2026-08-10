@@ -6,11 +6,11 @@ import SectionHeading from "@/components/landing/SectionHeading";
 export const metadata: Metadata = {
   title: "Partners — MIST",
   description:
-    "Confidential settlement and audit access on the same rail for payment service providers, OTC desks, payroll platforms, treasury teams, and compliance providers.",
+    "Private asset state, Reserve-scoped compliance proofs, and selective disclosure for payment providers, trading desks, treasury teams, and compliance partners.",
   openGraph: {
     title: "Partners — MIST",
     description:
-      "Compliance-native privacy infrastructure for regulated money movement. Apply for the pilot program.",
+      "Private asset state and Reserve-scoped compliance proofs for regulated money movement. Apply for the pilot program.",
     url: "https://mist.cash/partners",
     type: "website",
     siteName: "MIST",
@@ -61,61 +61,61 @@ const audiences = [
 ];
 
 const settlementFeatures = [
-  "Selective disclosure and protected sender, recipient, and amount, so counterparties and competitors can't reconstruct your flow.",
-  "Permissioned access and identity controls, so you decide who can see what, and when.",
-  "Audit logs and proof of validity that satisfy internal controls and regulators, without putting personal or commercial data on-chain.",
-  "KYC/AML and wallet screening that integrate with your existing compliance stack, not a separate one.",
-  "Wallet to wallet privacy, partial withdrawals, and private transaction forwarding, ready to integrate via SDK/API.",
-  "Proofs generate in about one second on a phone and settle for cents, not the multi-dollar cost of running your own ZK stack.",
-  "Cross-chain support today is USDC over CCTP on all supported networks.",
+  "Private note contents and transaction fields stay out of the clear, while an authorized operator or auditor can derive a key for selective per-transaction disclosure.",
+  "Fixed-width encrypted records keep input notes, beneficiary data, and discovery data from revealing record counts or reserve shape on-chain.",
+  "Secondary circuits can carry KYC membership, jurisdiction checks, auditor commitments, and amount constraints into the primary Chamber proof.",
+  "Chamber proves value conservation and nullifiers; a Reserve moves assets only when the proof authorizes an on-chain withdrawal.",
+  "Contract withdrawals can carry a circuit-bound payload for protocol-specific calls; the middleware defines its meaning.",
+  "Proof generation has been measured at about one second on an iPhone, while current product cost is about five cents with a lower target.",
+  "Current product scope is USDC over CCTP-supported networks; the core transaction model remains single-asset per transaction.",
 ];
 
 const reserveFeatures = [
-  "Deploy your KYC, AML, or jurisdiction logic as a Reserve with its own ZK proof, fully isolated from every other compliance pool on the network.",
-  "Earn a share of volume moving through your Reserve, not just a flat fee at signup.",
-  "Your Reserve's funds and risk profile stay separated from unregulated or differently regulated pools, so one bad actor elsewhere on the network never touches your users' trust scores.",
-  "Ship a MIST ID product for KYC without building settlement infrastructure yourself.",
+  "Deploy KYC membership, AML, jurisdiction, auditor-commitment, or amount-constraint logic as a Reserve proof checked alongside the Chamber proof.",
+  "Keep assets governed by one compliance rule set in a separate Reserve contract from unregulated or differently regulated funds.",
+  "Because Reserve custody is separated, activity in one Reserve does not automatically govern or contaminate the asset pool in another.",
+  "A recurring-volume or revenue-share arrangement is a proposed pilot model, not a protocol guarantee.",
 ];
 
 const howItWorks = [
   {
     name: "The Chamber",
-    role: "Settlement engine",
+    role: "State engine",
     detail:
-      "The core settlement engine. It never touches assets, it just tracks who owns what, privately.",
+      "Chamber stores transaction notes, nullifiers, and middleware state roots. It governs ownership state but never holds assets.",
   },
   {
     name: "Reserves",
-    role: "Where rules live",
+    role: "Isolated asset custody",
     detail:
-      "A KYC Reserve, an AML Reserve, and an unregulated Reserve can all run on the same network at the same time, fully walled off from each other.",
+      "Each Reserve is a specialized middleware with an asset-holding contract and its own compliance and exit rules.",
   },
   {
     name: "Middleware",
-    role: "Where custom logic runs",
+    role: "Custom proof logic",
     detail:
-      "Your compliance checks, your claiming conditions, your audit hooks, composed into a single proof instead of stacked one by one.",
+      "Middleware proofs extend Chamber transactions with private-flow rules, state-map access, exit conditions, and contract payloads.",
   },
 ];
 
 const whyNow = [
   {
     value: "First ZK proof on Starknet",
-    detail: "Shipped by the team now building MIST.",
+    detail: "A documented founder milestone from July 2024, implemented in Garaga.",
   },
   {
     value: "Hidemi live",
     detail: "MIST's first consumer app, launched January 2026.",
   },
   {
-    value: "2026 roadmap",
+    value: "Outer-wrapped Groth16",
     detail:
-      "Three networks live, MIST ID for KYC, sub-2-cent proofs, onboarding for stablecoin payment providers.",
+      "The selected architecture combines primary and secondary proofs in one outer proof, with aggregation as an explicit integration dependency.",
   },
   {
-    value: "Built by protocol engineers",
+    value: "USDC via CCTP",
     detail:
-      "Contributors to Aztec, Gnark, World ProveKit, and Arkworks Algebra, who worked directly with the government of Singapore on the compliance problem this solves.",
+      "The current product scope is USDC over CCTP-supported networks; broader cross-chain movement is a separate mechanism from the core model.",
   },
 ];
 
@@ -144,14 +144,13 @@ export default function PartnersPage() {
                 className="mt-6 font-display text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-6xl"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Settle on-chain without exposing who, what, or how much.
+                Settle on-chain while keeping transaction context private.
               </h1>
               <p className="mt-6 max-w-xl text-lg text-ink/70">
-                MIST is compliance-native privacy infrastructure for regulated
-                money movement. Confidential settlement, selective disclosure,
-                and audit access on the same rail, so you get privacy from
-                competitors and counterparties without losing the trail
-                regulators expect.
+                MIST is privacy infrastructure for regulated money movement.
+                Private note state, Reserve-scoped compliance proofs, and
+                selective per-transaction disclosure help protect commercial
+                context without removing an audit path.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="mailto:shramee@mist.cash" size="lg" variant="primary">
@@ -170,7 +169,7 @@ export default function PartnersPage() {
             <SectionHeading
               eyebrow="The problem"
               title="Public ledgers leak what your settlement should not."
-              intro="Stablecoins moved $30 trillion last year on fully public ledgers. If you are moving value on-chain today, your transaction sizes, counterparties, and flow patterns are visible to anyone watching, including competitors and the merchants or partners you settle with."
+              intro="Public ledgers expose transaction sizes, counterparties, and flow patterns to anyone watching, including competitors and the merchants or partners you settle with. If you move value on-chain, that visibility is part of the settlement surface."
             />
             <p className="mx-auto max-w-3xl text-center text-ink/70">
               Buyers in this position do not want full anonymity, that invites
@@ -212,7 +211,7 @@ export default function PartnersPage() {
           <div className="mist-section">
             <SectionHeading
               eyebrow="Two ways to build with MIST"
-              title="Settlement rails, or compliance modules that earn."
+              title="Settlement rails and compliance integrations."
             />
 
             <div className="grid gap-6 lg:grid-cols-2">
@@ -252,19 +251,17 @@ export default function PartnersPage() {
                   For compliance and KYC/AML providers
                 </h3>
                 <p className="mt-3 text-ink/70">
-                  Turn a one-time onboarding check into a recurring revenue
-                  line.
+                  Extend an existing compliance workflow into private settlement
+                  proofs.
                 </p>
                 <p className="mt-3 text-ink/70">
-                  Every buyer above needs KYC/AML integration and audit access
-                  as a baseline requirement, not an add-on. Most compliance
-                  vendors charge once when a user onboards, then the
-                  relationship ends. MIST&apos;s architecture lets you run your
-                  own compliance module, called a Reserve, directly inside the
-                  settlement layer. Every transaction that passes through your
-                  Reserve carries your KYC membership proof, your jurisdiction
-                  check, or your own custom rule set, and every one of those
-                  transactions is a revenue event for you.
+                  MIST lets a compliance provider define a Reserve with its own
+                  proof requirements. A transaction can carry a KYC membership,
+                  jurisdiction check, auditor commitment, or custom amount rule
+                  into the combined proof, while the sensitive record stays
+                  encrypted and selectively disclosable per transaction. Any
+                  commercial arrangement around Reserve volume belongs in the
+                  pilot agreement, not in the protocol guarantee.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {reserveFeatures.map((feature) => (
@@ -296,7 +293,7 @@ export default function PartnersPage() {
           <div className="mist-section">
             <SectionHeading
               eyebrow="How it works"
-              title="One network, three parts that never mix."
+              title="One state engine, isolated Reserves, composable proofs."
             />
             <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-2 md:flex-row md:items-stretch">
               {howItWorks.map((layer, i) => (
@@ -317,10 +314,11 @@ export default function PartnersPage() {
               ))}
             </div>
             <p className="mx-auto mt-10 max-w-3xl text-center text-ink/70">
-              The result: a consumer gets full privacy on their swap, a payment
-              provider or treasury desk gets a full audit trail on its
-              settlement, and a compliance provider gets paid on every
-              transaction that clears their Reserve, all on the same rail.
+              The result: a transfer can keep note contents and sensitive
+              fields out of the clear, a payment provider can define the
+              disclosure context its auditors need, and a compliance provider
+              can attach its rules to a separated Reserve. The exact disclosure
+              workflow and commercial terms belong to the integration.
             </p>
           </div>
         </section>
@@ -329,7 +327,7 @@ export default function PartnersPage() {
           <div className="mist-section">
             <SectionHeading
               eyebrow="Why now"
-              title="The proof points are already on-chain."
+              title="The protocol boundaries are explicit."
             />
             <div className="grid gap-px border border-misty bg-misty md:grid-cols-2 lg:grid-cols-4">
               {whyNow.map((point) => (

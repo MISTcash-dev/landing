@@ -2,39 +2,39 @@ import SectionHeading from "./SectionHeading";
 
 const capabilities = [
   {
-    title: "Private settlement",
+    title: "Private state transitions",
     mechanism:
-      "ZK proofs validate transfers without revealing sender, receiver, or amount.",
+      "The primary circuit proves note membership, ownership, value conservation, and nullifiers without exposing note contents.",
     payoff:
-      "Protocols settle stablecoin and crypto payments without exposing any party's position.",
+      "In-protocol transfers pool and redistribute notes; assets move only when a withdrawal calls a Reserve.",
   },
   {
     title: "Custom middleware rules",
     mechanism:
-      "Operators insert their own rules into the proving pipeline between deposit and withdrawal.",
+      "Middleware proofs extend Chamber transactions with private-flow rules, exit conditions, and state-map lookups.",
     payoff:
-      "Limits, allowlists, and policy logic run without a centralized operator seeing the data.",
+      "Operators can compose policy logic against committed state without exposing the values or indexes the proof accesses.",
   },
   {
     title: "Compliance paths",
     mechanism:
-      "Proof-of-innocence and selective disclosure satisfy KYC and travel rule checks on demand.",
+      "Secondary circuits can prove KYC membership, jurisdiction checks, auditor commitments, and amount constraints.",
     payoff:
-      "Regulated institutions keep privacy while meeting reporting obligations.",
+      "Sensitive fields can be encrypted inside the proof, with a per-transaction disclosure key for an authorized operator or auditor.",
   },
   {
-    title: "Cross-chain privacy",
+    title: "Asset-scoped settlement",
     mechanism:
-      "Private assets move across supported chains with a single unlinkable proof set.",
+      "Each transaction conserves one asset across two input notes, two output notes, or an optional withdrawal.",
     payoff:
-      "Users hold one private position across networks instead of fragmenting liquidity.",
+      "The protocol keeps accounting and collateralization within one Chamber and Reserve boundary at a time.",
   },
   {
-    title: "Programmable escrow",
+    title: "Programmable integration",
     mechanism:
-      "ZK-TLS claims attest off-chain events, so funds release only on verified conditions.",
+      "A circuit-bound tx_payload can carry instructions for a contract withdrawal; its contents and meaning belong to the middleware.",
     payoff:
-      "Escrow that executes on proof, not on trust in a counterparty's word.",
+      "Integrators can connect private withdrawals to protocol-specific calls without letting a relayer alter the payload.",
   },
 ];
 

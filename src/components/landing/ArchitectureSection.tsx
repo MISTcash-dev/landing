@@ -3,21 +3,21 @@ import SectionHeading from "./SectionHeading";
 const layers = [
   {
     name: "Chamber",
-    role: "Privacy state",
+    role: "State engine",
     detail:
-      "Deposits and withdrawals are unlinkable. Leaves commit to notes in a Merkle tree; proofs validate without revealing which note was spent.",
+      "Chamber stores transaction notes, nullifiers, and middleware state roots. It proves and updates ownership state, but never holds assets.",
   },
   {
     name: "Middleware",
-    role: "Operator rules",
+    role: "Custom logic",
     detail:
-      "Policy runs as a layer between Chamber and Reserve. Operators specify rules — limits, allowlists, compliance checks — as code.",
+      "Middleware proofs extend private transactions with policy, state-map lookups, exit conditions, and contract-specific payloads.",
   },
   {
     name: "Reserve",
-    role: "Settlement",
+    role: "Isolated asset custody",
     detail:
-      "The settlement layer holds the pooled assets and executes withdrawals. Proofs from Chamber plus middleware gate every release.",
+      "A Reserve is specialized middleware with an asset-holding contract and its own entry, private-flow, and exit rules.",
   },
 ];
 
@@ -27,19 +27,12 @@ export default function ArchitectureSection() {
       <div className="mist-section">
         <SectionHeading
           eyebrow="Architecture"
-          title="One private state, three layers."
-          intro="MIST separates where privacy lives from where rules run and where funds settle. Each layer is independently replaceable."
+          title="One state engine, isolated asset pools, programmable rules."
+          intro="MIST separates transaction state from custom logic and asset custody. Chamber governs movement; Reserves hold assets; Middleware and Reserve proofs add rules."
         />
-        <div className="mx-auto flex max-w-3xl flex-col items-stretch gap-2 md:flex-row md:items-stretch">
+        <div className="mx-auto flex flex-col items-stretch gap-2 md:flex-row md:items-stretch">
           {layers.map((layer, i) => (
-            <div key={layer.name} className="flex flex-1 flex-col gap-2 md:flex-row md:items-stretch">
-              {i > 0 && (
-                <div className="flex items-center justify-center px-0 text-ink/40 md:px-1" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                  </svg>
-                </div>
-              )}
+            <div key={layer.name} className="flex flex-1 flex-col gap-8 md:flex-row md:items-stretch">
               <article className="flex-1 border border-misty bg-baby p-6">
                 <h3 className="mist-h3 text-ink">{layer.name}</h3>
                 <p className="mist-eyebrow mt-1 text-cobalt">{layer.role}</p>
@@ -49,14 +42,16 @@ export default function ArchitectureSection() {
           ))}
         </div>
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/60">
-          A transfer moves through the middleware, updates the Chamber, and
-          settles against the Reserve. Every step is provable; nothing is
-          visible by default.
+          A deposit calls Chamber, which moves assets into a Reserve and adds a
+          note. An in-protocol transfer updates notes and nullifiers without
+          moving assets. A withdrawal updates Chamber and calls the Reserve to
+          send assets to the specified public destination.
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-ink/60">
-          Cross-chain support today is USDC over CCTP on all supported networks.
-          The legacy Starknet deployment covered six specified networks. USDT
-          over usdt0 is on the roadmap.
+          Each transaction uses one asset and one Chamber/Reserve boundary. The
+          current product scope is USDC over CCTP on supported networks; the
+          core transaction model does not itself specify cross-chain movement.
+          USDT over usdt0 is on the roadmap.
         </p>
       </div>
     </section>

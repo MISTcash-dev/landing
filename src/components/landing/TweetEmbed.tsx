@@ -1,13 +1,7 @@
 import { getTweet, type Tweet } from "react-tweet/api";
 import { EmbeddedTweet } from "react-tweet";
 
-export default async function TweetEmbed({
-  id,
-  author,
-}: {
-  id: string;
-  author: string;
-}) {
+export default async function TweetEmbed({ id }: { id: string }) {
   let tweet: Tweet | undefined;
   try {
     tweet = await getTweet(id);

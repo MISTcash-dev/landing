@@ -11,7 +11,7 @@ import CTASection from "@/components/landing/CTASection";
 export const metadata: Metadata = {
   title: "MIST — Privacy infrastructure by your rules",
   description:
-    "A multi-chain privacy framework for blockchain payments. Programmable ZK-proof protocol for private, auditable, compliant transfers across chains.",
+    "A programmable ZK-proof protocol for private asset transfers, composable middleware, and Reserve-scoped compliance.",
 };
 
 export default function Home() {

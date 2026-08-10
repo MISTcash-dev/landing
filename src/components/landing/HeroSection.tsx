@@ -5,7 +5,7 @@ const proofPoints = [
   { value: "USDC", label: "via CCTP networks" },
   { value: "~1s", label: "proof on an iPhone" },
   { value: "<2¢", label: "cost target per tx" },
-  { value: "ZK", label: "recursive proofs" },
+  { value: "ZK", label: "outer-wrapped proofs" },
 ];
 
 export default function HeroSection() {
@@ -22,9 +22,8 @@ export default function HeroSection() {
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink/70">
             MIST is a multi-chain privacy framework for blockchain payments. A
-            programmable ZK-proof protocol for private stablecoin and crypto
-            transfers across chains — composable, auditable, and built with a
-            compliance path.
+            programmable ZK-proof protocol for private asset transfers, with
+            composable middleware and a compliance path.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="https://docs.mist.cash" size="lg" variant="primary">

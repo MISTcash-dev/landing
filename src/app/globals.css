@@ -172,6 +172,14 @@ body {
   color: #081019;
 }
 
+.tweet-embed [class*="highlighted-label"] {
+  border: none;
+}
+
+.tweet-embed [class*="tweet-header_authorVerified"] {
+  display: none;
+}
+
 /* The container that react-tweet renders around the tweet */
 .tweet-embed [class*="tweet-container_root"] {
   border: none;

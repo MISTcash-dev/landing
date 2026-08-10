@@ -7,25 +7,26 @@ const stats = [
   },
   {
     value: "~1s",
-    detail: "Proof generation on an iPhone — privacy that holds up on mobile.",
+    detail: "Measured proof generation on an iPhone; this is a performance benchmark, not a protocol invariant.",
   },
   {
     value: "~5¢",
-    detail: "Current cost per transaction, heading toward a <2¢ target.",
+    detail: "Current product cost benchmark, heading toward a <2¢ target.",
+  },
+  {
+    value: "Outer-wrapped Groth16",
+    detail:
+      "The selected implementation decouples the primary and secondary proofs, then recursively verifies them in one outer proof.",
   },
   {
     value: "USDC via CCTP",
     detail:
-      "Cross-chain USDC on every network CCTP supports. Scope is USDC today, not arbitrary assets.",
+      "Current product scope is cross-chain USDC over CCTP-supported networks; the core transaction model remains asset-scoped.",
   },
   {
-    value: "USDT via usdt0",
-    detail: "Planned down the road, not live yet.",
-  },
-  {
-    value: "Shared anonymity set",
+    value: "Reserve-scoped exits",
     detail:
-      "Designed so users across chains draw from one set, not a pool per chain. Size grows with usage, not live yet.",
+      "In-protocol transfers can share the protocol set; withdrawal privacy and compliance scope follow the Reserve holding the asset.",
   },
 ];
 
@@ -48,8 +49,8 @@ export default function ProofPointsSection() {
             </article>
           ))}
           <article className="flex items-center justify-center bg-ink p-7 md:col-span-2 lg:col-span-3">
-            <p className="max-w-[30ch] text-sm font-semibold text-baby">
-              Every figure is specified on-chain or in the protocol spec.
+            <p className="max-w-[42ch] text-sm font-semibold text-baby">
+              Benchmarks, targets, product scope, and protocol design are labeled separately so integrators can tell what is live, measured, or planned.
             </p>
           </article>
         </div>

@@ -5,7 +5,7 @@ type CellValue = "yes" | "no" | "partial" | string;
 interface Row {
   capability: string;
   mist: CellValue;
-  mixers: CellValue;
+  privacyPools: CellValue;
   privacyCoins: CellValue;
   onchainZkp: CellValue;
   fhe: CellValue;
@@ -15,23 +15,23 @@ const rows: Row[] = [
   {
     capability: "Cross-chain",
     mist: "yes",
-    mixers: "partial",
+    privacyPools: "partial",
     privacyCoins: "no",
     onchainZkp: "partial",
     fhe: "no",
   },
   {
-    capability: "Multi-asset",
+    capability: "Single-asset transaction accounting",
     mist: "yes",
-    mixers: "partial",
-    privacyCoins: "no",
-    onchainZkp: "partial",
-    fhe: "yes",
+    privacyPools: "Unspecified",
+    privacyCoins: "Unspecified",
+    onchainZkp: "Unspecified",
+    fhe: "Unspecified",
   },
   {
     capability: "Native programmable compliance",
     mist: "yes",
-    mixers: "no",
+    privacyPools: "no",
     privacyCoins: "no",
     onchainZkp: "partial",
     fhe: "no",
@@ -39,15 +39,15 @@ const rows: Row[] = [
   {
     capability: "Settlement finality",
     mist: "yes",
-    mixers: "yes",
+    privacyPools: "yes",
     privacyCoins: "yes",
     onchainZkp: "partial",
     fhe: "no",
   },
   {
     capability: "Anonymity set",
-    mist: "Shared",
-    mixers: "Variable",
+    mist: "Shared in-protocol; Reserve-scoped exits",
+    privacyPools: "Variable",
     privacyCoins: "Global",
     onchainZkp: "Variable",
     fhe: "Variable",
@@ -78,7 +78,7 @@ function CellContent({ value }: { value: CellValue }) {
 
 const competitors = [
   { key: "mist" as const, label: "MIST", highlight: true },
-  { key: "mixers" as const, label: "Privacy pools", highlight: false },
+  { key: "privacyPools" as const, label: "Privacy pools", highlight: false },
   { key: "privacyCoins" as const, label: "Privacy coins", highlight: false },
   { key: "onchainZkp" as const, label: "On-chain ZKP", highlight: false },
   { key: "fhe" as const, label: "FHE", highlight: false },
@@ -91,7 +91,7 @@ export default function CompetitiveTable() {
         <SectionHeading
           eyebrow="Why MIST"
           title="The white space is the intersection."
-          intro="Cross-chain, multi-asset, and native programmable compliance. No other category occupies all three."
+          intro="Cross-chain USDC, asset-scoped accounting, and programmable compliance. MIST combines these priorities without hiding the protocol boundaries."
         />
         <div className="overflow-x-auto border border-misty bg-white">
           <table className="w-full min-w-[720px] border-collapse text-left">
@@ -128,11 +128,10 @@ export default function CompetitiveTable() {
           </table>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/60">
-          Trade-offs are real. Privacy pools trade compliance for privacy,
-          privacy coins trade ecosystems for anonymity, on-chain ZKP solutions
-          trade
-          cross-chain reach. MIST is built where none of those trades are
-          required.
+          Trade-offs are real. MIST documents its own boundaries: one asset per
+          transaction, one Chamber/Reserve custody boundary, and a separate
+          mechanism required for cross-chain movement. Compare deployments and
+          proof models on their stated guarantees, not category labels alone.
         </p>
       </div>
     </section>
