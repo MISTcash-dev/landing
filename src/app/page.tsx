@@ -1,29 +1,34 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import Navbar from "@/components/landing/Navbar";
+import HeroSection from "@/components/landing/HeroSection";
+import ProtocolShowcase from "@/components/landing/ProtocolShowcase";
+import ArchitectureSection from "@/components/landing/ArchitectureSection";
+import ProofPointsSection from "@/components/landing/ProofPointsSection";
+import CompetitiveTable from "@/components/landing/CompetitiveTable";
+import BlogPreview from "@/components/landing/BlogPreview";
+import CTASection from "@/components/landing/CTASection";
+import Footer from "@/components/landing/Footer";
 
 export const metadata: Metadata = {
-  title: "Try Hidemi — Private USDC Transfers by MIST.cash",
+  title: "MIST — Privacy infrastructure by your rules",
   description:
-    "Send and receive USDC privately across 6 blockchains. No transaction history, no wallet tracking. Powered by ZK proofs. Free to use.",
-  openGraph: {
-    title: "Try Hidemi — Private USDC Transfers by MIST.cash",
-    description:
-      "Your wallet is a window. Everyone's watching. Hidemi lets you send and receive USDC privately across chains — powered by ZK proofs.",
-    url: "https://mist.cash/try-hidemi",
-    type: "website",
-    siteName: "MIST.cash",
-    images: [{ url: "/try-hidemi/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Try Hidemi — Private USDC Transfers",
-    description:
-      "Send USDC privately across 6 chains. No history. No tracking. Powered by ZK proofs.",
-    site: "@mistcash",
-    images: ["/try-hidemi/opengraph-image"],
-  },
+    "A multi-chain privacy framework for blockchain payments. Programmable ZK-proof protocol for private, auditable, compliant transfers across chains.",
 };
 
 export default function Home() {
-  redirect("/try-hidemi");
+  return (
+    <>
+      <Navbar />
+      <main id="main-content">
+        <HeroSection />
+        <ProtocolShowcase />
+        <ArchitectureSection />
+        <ProofPointsSection />
+        <CompetitiveTable />
+        <BlogPreview />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
+  );
 }

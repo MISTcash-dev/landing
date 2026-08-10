@@ -1,75 +1,63 @@
 import Image from "next/image";
+import Link from "next/link";
 
-interface FooterProps {
-  branding?: React.ReactNode;
-}
+const footerLinks = [
+  { label: "Product", href: "#product" },
+  { label: "Architecture", href: "#architecture" },
+  { label: "Blog", href: "/blog" },
+  { label: "Try Hidemi", href: "/try-hidemi" },
+];
 
-export default function Footer({ branding }: FooterProps) {
+export default function Footer() {
   return (
-    <footer className="border-t border-white/5 px-6 py-12">
-      <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          {/* Brand */}
-          <div className="flex items-center gap-2.5">
-            {branding ? branding : <>
-              <Image
-                src="/logo-mist.svg"
-                alt="MIST"
-                width={22}
-                height={22}
-                className="h-5.5 w-5.5"
-              />
-              <span className="text-sm font-bold text-white">
-                MIST<span className="text-cyan-400">.cash</span>
-              </span>
-            </>}
-          </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            <a
-              href="https://github.com/mistcash"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-cyan-400"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://t.me/+IopcODWeG7wxZDhl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-cyan-400"
-            >
-              Telegram
-            </a>
-            <a
-              href="https://docs.mist.cash"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-cyan-400"
-            >
-              Documentation
-            </a>
-            <a
-              href="mailto:support@mist.cash"
-              className="transition-colors hover:text-cyan-400"
-            >
-              Support
-            </a>
-          </div>
-
-          {/* Copyright */}
-          <p className="text-sm text-slate-600">
-            &copy; 2026 MIST.cash. All rights reserved.
+    <footer id="contact" className="border-t border-misty bg-baby">
+      <div className="mist-section flex flex-col items-center gap-10 py-12 md:flex-row md:items-start md:justify-between">
+        <div className="flex flex-col items-center gap-4 md:items-start">
+          <Image
+            src="/mist.cash.svg"
+            alt="MIST"
+            width={160}
+            height={30}
+            className="h-7 w-auto"
+          />
+          <p className="max-w-xs text-center text-sm text-ink/60 md:text-left">
+            Privacy infrastructure by your rules.
           </p>
         </div>
 
-        <p className="mt-8 text-center text-xs leading-relaxed text-slate-700">
-          MIST.cash provides privacy-preserving transaction infrastructure. It
-          is not a mixer. All transactions are compliant through Privacy
-          Pool&ndash;based proof-of-innocence mechanisms. Non-custodial &mdash;
-          MIST never holds user funds.
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-ink/80">
+          {footerLinks.map((link) => (
+            <Link key={link.label} href={link.href} className="hover:text-cobalt">
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center gap-2 text-sm text-ink/80 md:items-end">
+          <a href="mailto:shramee@mist.cash" className="hover:text-cobalt">
+            shramee@mist.cash
+          </a>
+          <a
+            href="https://t.me/shramee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-cobalt"
+          >
+            Telegram @shramee
+          </a>
+          <a
+            href="https://x.com/shrameetweets"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-cobalt"
+          >
+            X @shrameetweets
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-misty">
+        <p className="mist-section py-6 text-center text-xs text-ink/50">
+          &copy; 2026 MIST. All rights reserved.
         </p>
       </div>
     </footer>

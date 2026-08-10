@@ -7,18 +7,18 @@
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src",
     "deploy": "next build && npx gh-pages --nojekyll --dotfiles -d out -r https://github.com/mistcash/landing.git",
     "dep": "next build && npx gh-pages --nojekyll --dotfiles -d out",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "lucide-react": "^0.534.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.9",
     "next": "^15.5.8",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-tweet": "^3.3.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",

@@ -1,0 +1,13 @@
+:root{
+--font-display:"Josefin Sans", ui-sans-serif, Futura, "Century Gothic", sans-serif;
+--font-text:"Sen", ui-sans-serif, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+--font-mono:ui-monospace, SFMono-Regular, Menlo, monospace;
+--text-h1-size:44px;--text-h1-line:1.1;--text-h1-weight:700;--text-h1-tracking:-0.02em;
+--text-h2-size:30px;--text-h2-line:1.15;--text-h2-weight:600;--text-h2-tracking:-0.01em;
+--text-h3-size:22px;--text-h3-line:1.25;--text-h3-weight:600;--text-h3-tracking:-0.005em;
+--text-eyebrow-size:13px;--text-eyebrow-line:1.2;--text-eyebrow-weight:600;--text-eyebrow-tracking:0.14em;
+--text-body-size:16px;--text-body-line:1.6;--text-body-weight:400;--text-body-tracking:0;
+--text-body-emphasis-weight:600;
+--text-small-size:13px;--text-small-line:1.5;--text-small-weight:400;
+--line-length-max:75ch;
+}

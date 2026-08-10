@@ -1,30 +1,36 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Josefin_Sans, Sen } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const josefin = Josefin_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-sans",
+  weight: ["400", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sen = Sen({
+  subsets: ["latin"],
+  weight: ["400", "600", "800"],
+  variable: "--font-text",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mist.cash"),
-  title: "MIST.cash — Private, Compliant USDC Transfers",
+  title: "MIST — Privacy infrastructure by your rules",
   description:
-    "Send and receive USDC privately across 6 blockchains. No transaction history, no wallet tracking. Powered by ZK proofs. Free to use.",
+    "A multi-chain privacy framework for blockchain payments. Programmable ZK-proof protocol for private, auditable, compliant transfers across chains.",
   openGraph: {
-    title: "MIST.cash — Private, Compliant USDC Transfers",
+    title: "MIST — Privacy infrastructure by your rules",
     description:
-      "Your wallet is a window. Everyone's watching. MIST.cash lets you send and receive USDC privately across chains.",
+      "A programmable ZK-proof protocol for private settlement, compliance paths, and cross-chain privacy. Built for operators and integrators.",
     type: "website",
-    siteName: "MIST.cash",
+    siteName: "MIST",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@_mistcash",
+    site: "@mistcash",
   },
 };
 
@@ -34,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${plusJakartaSans.variable}`}>
-      <body className="antialiased bg-navy-950 text-slate-100">
+    <html lang="en" className={`${josefin.variable} ${sen.variable}`}>
+      <body className="antialiased bg-baby text-ink">
         <a href="#main-content" className="skip-nav">
           Skip to content
         </a>
