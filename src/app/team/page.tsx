@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Badge from "@/components/landing/Badge";
 import SectionHeading from "@/components/landing/SectionHeading";
@@ -8,44 +9,6 @@ export const metadata: Metadata = {
   description:
     "MIST is built by one founder: 12 years of engineering, the first ZK proof on Starknet, and a decade of contributions across Gnark, Aztec, and more.",
 };
-
-const credentials = [
-  {
-    credential: "12 years of technical experience",
-    meaning:
-      "The protocol is designed and shipped by someone who has seen a decade of stack migrations, audits, and production failures.",
-  },
-  {
-    credential: "Dropped out of high school to work as a full-time developer",
-    meaning:
-      "A self-taught path — no credentials to protect, only software that has to work.",
-  },
-  {
-    credential: "First ZK proof on Starknet",
-    meaning:
-      "Led the earliest practical ZK proving on the network, and shipped multiple high-impact projects along the way.",
-  },
-  {
-    credential: "Largest external contributor to Gnark",
-    meaning:
-      "Gnark powers Linea — the proving stack of one of the biggest L2s was built on with contributions here.",
-  },
-  {
-    credential: "Contributions to Aztec, World ProveKit & Arkworks Algebra",
-    meaning:
-      "Hands-on across the proving ecosystems MIST composes with, not just a consumer of them.",
-  },
-  {
-    credential: "Lecturer on software development at PaCE@NTU",
-    meaning:
-      "Has taught the fundamentals in front of a university room — and communicated complex systems under scrutiny.",
-  },
-  {
-    credential: "Worked directly with the government of Singapore",
-    meaning:
-      "Seen the compliance side of the table, which is why MIST is built for auditability, not anonymity.",
-  },
-];
 
 const story = [
   {
@@ -77,7 +40,6 @@ const story = [
 export default function TeamPage() {
   return (
     <>
-      {/* Hero */}
       <section className="border-b border-misty bg-baby">
         <div className="mist-section flex flex-col items-start gap-10 py-20 md:py-28">
           <div className="max-w-2xl">
@@ -117,25 +79,67 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Bio — credential, then what it means */}
-      <section className="py-16 md:py-24">
+      <section className="border-b border-misty bg-baby py-12 md:py-16">
         <div className="mist-section">
-          <SectionHeading
-            eyebrow="The founder"
-            title="Every credential, and what it buys you."
-          />
-          <div className="grid gap-px border border-misty bg-misty md:grid-cols-2">
-            {credentials.map((item) => (
-              <article key={item.credential} className="bg-white p-7">
-                <h2 className="mist-h3 text-ink">{item.credential}</h2>
-                <p className="mt-3 text-sm text-ink/70">{item.meaning}</p>
-              </article>
-            ))}
+          <div className="grid gap-6 md:grid-cols-2">
+            <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
+              <Image
+                src="/events/events-zuafrique-zk-primitives.jpeg"
+                alt="Shramee speaking at a ZK privacy event"
+                width={2048}
+                height={1365}
+                className="h-auto w-full"
+              />
+              <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
+                Speaking at a ZK privacy event.
+              </figcaption>
+            </figure>
+            <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
+              <Image
+                src="/events/events-muchiangmai-account-abstraction.jpeg"
+                alt="Shramee speaking at a ZK privacy event"
+                width={2048}
+                height={1536}
+                className="h-auto w-full"
+              />
+              <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
+                Speaking at a ZK privacy event.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      {/* Story */}
+      <section className="py-16 md:py-24">
+        <div className="mist-section">
+          <SectionHeading
+            eyebrow="The founder"
+            title="The record, and what it means."
+          />
+          <div className="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-ink/70">
+            <p>
+              Shramee has 12 years of technical experience across stack migrations,
+              audits, and production systems. He has worked as a full-time developer
+              since dropping out of high school, and has also lectured on software
+              development at PaCE@NTU — experience that keeps complex systems grounded
+              in software that has to work and explanations that hold up under scrutiny.
+            </p>
+            <p>
+              He produced the first ZK proof on Starknet and became the largest external
+              contributor to Gnark, the proving stack used by Linea. His contributions to
+              Aztec, World ProveKit, and Arkworks Algebra give MIST hands-on experience
+              across the proving ecosystems it composes with, rather than treating them
+              as black boxes.
+            </p>
+            <p>
+              He has worked directly with the government of Singapore and has seen the
+              compliance side of the table. That record is why MIST is built for
+              auditability and a practical compliance path, not anonymity alone.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-misty bg-white py-16 md:py-24">
         <div className="mist-section">
           <SectionHeading

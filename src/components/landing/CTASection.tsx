@@ -2,7 +2,7 @@ import Button from "./Button";
 
 export default function CTASection({
   heading = "Build with MIST.",
-  body = "Integrate private settlement into your protocol. The docs specify the full operator and integrator path.",
+  body = "Integrate private settlement into any protocol. The docs specify the full operator and integrator path.",
   primary = { label: "Read the docs", href: "https://docs.mist.cash" },
   secondary = { label: "Contact the team", href: "mailto:shramee@mist.cash" },
 }: {
