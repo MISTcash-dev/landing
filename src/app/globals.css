@@ -158,7 +158,7 @@ body {
 }
 
 /* Inside the tweet embeds only */
-[class*="tweet-embed-figure"] .react-tweet-theme {
+.tweet-embed .react-tweet-theme {
   /* Design-system fonts and ink text */
   --tweet-font-family: var(--font-text);
   --tweet-font-color: #081019;
@@ -173,7 +173,7 @@ body {
 }
 
 /* The container that react-tweet renders around the tweet */
-[class*="tweet-embed-figure"] [class*="tweet-container_root"] {
+.tweet-embed [class*="tweet-container_root"] {
   border: none;
   border-radius: 0;
   margin: 0;
@@ -182,12 +182,20 @@ body {
 }
 
 /* The wrapper div inside the container */
-[class*="tweet-embed-figure"] [class*="tweet-container_article"] {
+.tweet-embed [class*="tweet-container_article"] {
   padding: 1.25rem 1.25rem 0.5rem;
 }
 
+.tweet-embed [class*="quoted-tweet-container_article"] {
+  padding: 0;
+}
+
+.tweet-embed [class*="quoted-tweet-header"]+p {
+  margin-top: 0.5rem;
+}
+
 /* Tweet body */
-[class*="tweet-embed-figure"] [class*="tweet-body_root"] {
+.tweet-embed [class*="tweet-body_root"] {
   font-family: var(--font-text);
   font-size: 15px;
   line-height: 1.5;
@@ -195,69 +203,69 @@ body {
 }
 
 /* Header: names and handles in site colors, Sen font */
-[class*="tweet-embed-figure"] [class*="tweet-header_"] {
+.tweet-embed [class*="tweet-header_"] {
   font-family: var(--font-text);
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-header_authorLinkText"],
-[class*="tweet-embed-figure"] [class*="tweet-header_authorText"],
-[class*="tweet-embed-figure"] [class*="tweet-header_author__"],
-[class*="tweet-embed-figure"] [class*="tweet-header_authorLink"] {
+.tweet-embed [class*="tweet-header_authorLinkText"],
+.tweet-embed [class*="tweet-header_authorText"],
+.tweet-embed [class*="tweet-header_author__"],
+.tweet-embed [class*="tweet-header_authorLink"] {
   color: #081019;
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-header_username"],
-[class*="tweet-embed-figure"] [class*="tweet-header_separator"],
-[class*="tweet-embed-figure"] [class*="tweet-header_follow"] {
+.tweet-embed [class*="tweet-header_username"],
+.tweet-embed [class*="tweet-header_separator"],
+.tweet-embed [class*="tweet-header_follow"] {
   color: rgba(8, 16, 25, 0.6);
 }
 
 /* Avatar: 2px radius instead of react-tweet's 9999px pill
    (intentional: the design system uses 2px everywhere) */
-[class*="tweet-embed-figure"] [class*="tweet-header_avatarOverflow"],
-[class*="tweet-embed-figure"] [class*="quoted-tweet-header_avatarOverflow"] {
+.tweet-embed [class*="tweet-header_avatarOverflow"],
+.tweet-embed [class*="quoted-tweet-header_avatarOverflow"] {
   border-radius: 2px;
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-header_avatarShadow"] {
+.tweet-embed [class*="tweet-header_avatarShadow"] {
   box-shadow: none;
 }
 
 /* Actions row (like / reply / copy) */
-[class*="tweet-embed-figure"] [class*="tweet-actions_actions"] {
+.tweet-embed [class*="tweet-actions_actions"] {
   border-top: 1px solid var(--color-misty);
   color: rgba(8, 16, 25, 0.6);
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-actions_likeIconWrapper"],
-[class*="tweet-embed-figure"] [class*="tweet-actions_replyIconWrapper"],
-[class*="tweet-embed-figure"] [class*="tweet-actions_copyIconWrapper"] {
+.tweet-embed [class*="tweet-actions_likeIconWrapper"],
+.tweet-embed [class*="tweet-actions_replyIconWrapper"],
+.tweet-embed [class*="tweet-actions_copyIconWrapper"] {
   border-radius: 2px;
 }
 
 /* Info row (timestamp / share link) */
-[class*="tweet-embed-figure"] [class*="tweet-info_info"] {
+.tweet-embed [class*="tweet-info_info"] {
   color: rgba(8, 16, 25, 0.6);
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-info_infoLink"] {
+.tweet-embed [class*="tweet-info_infoLink"] {
   border-radius: 2px;
 }
 
 /* Replies pill (button) — square it off */
-[class*="tweet-embed-figure"] [class*="tweet-replies_link"] {
+.tweet-embed [class*="tweet-replies_link"] {
   border: 1px solid var(--color-misty);
   border-radius: 2px;
   color: rgba(8, 16, 25, 0.6);
 }
 
 /* Links (e.g. embedded links in the body) — cobalt to match the site */
-[class*="tweet-embed-figure"] [class*="tweet-link_root"] {
+.tweet-embed [class*="tweet-link_root"] {
   color: var(--color-cobalt);
 }
 
 /* Quoted tweets — same card treatment inside */
-[class*="tweet-embed-figure"] [class*="quoted-tweet-container_root"] {
+.tweet-embed [class*="quoted-tweet-container_root"] {
   border: 1px solid var(--color-misty);
   border-radius: 2px;
   margin: 0.75rem 0;
@@ -265,16 +273,16 @@ body {
   background: transparent;
 }
 
-[class*="tweet-embed-figure"] [class*="quoted-tweet-header_"] {
+.tweet-embed [class*="quoted-tweet-header_"] {
   font-family: var(--font-text);
   color: #081019;
 }
 
-[class*="tweet-embed-figure"] [class*="quoted-tweet-header_username"] {
+.tweet-embed [class*="quoted-tweet-header_username"] {
   color: rgba(8, 16, 25, 0.6);
 }
 
-[class*="tweet-embed-figure"] [class*="quoted-tweet-body_root"] {
+.tweet-embed [class*="quoted-tweet-body_root"] {
   font-family: var(--font-text);
   font-size: 14px;
   line-height: 1.45;
@@ -282,29 +290,27 @@ body {
 }
 
 /* Media inside the quoted tweet / tweet */
-[class*="tweet-embed-figure"] [class*="tweet-media_root"] {
+.tweet-embed [class*="tweet-media_root"] {
   border-radius: 2px;
 }
 
-[class*="tweet-embed-figure"] [class*="tweet-media_rounded"] {
+.tweet-embed [class*="tweet-media_rounded"] {
   border: 1px solid var(--color-misty);
   border-radius: 2px;
 }
 
 /* Media images (square avatars / photos) */
-[class*="tweet-embed-figure"] [class*="tweet-media_image"],
-[class*="tweet-embed-figure"] [class*="tweet-media-video_videoButton"],
-[class*="tweet-embed-figure"] [class*="tweet-media-video_anchor"] {
+.tweet-embed [class*="tweet-media_image"],
+.tweet-embed [class*="tweet-media-video_videoButton"],
+.tweet-embed [class*="tweet-media-video_anchor"] {
   border-radius: 2px;
 }
 
 /* Tweet skeleton (during load) */
-[class*="tweet-embed-figure"] .react-tweet-theme {
-  --tweet-skeleton-gradient: linear-gradient(
-    270deg,
-    var(--color-baby),
-    var(--color-misty),
-    var(--color-misty),
-    var(--color-baby)
-  );
+.tweet-embed .react-tweet-theme {
+  --tweet-skeleton-gradient: linear-gradient(270deg,
+      var(--color-baby),
+      var(--color-misty),
+      var(--color-misty),
+      var(--color-baby));
 }

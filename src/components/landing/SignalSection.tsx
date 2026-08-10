@@ -19,7 +19,7 @@ export default function SignalSection() {
         <SectionHeading
           eyebrow="Signal"
           title="In the wild."
-          intro="Independent takes on the protocol, from the people building in the same space."
+          intro="Independent takes on the protocol, from the people building in the space."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {tweets.map((t, index) => (

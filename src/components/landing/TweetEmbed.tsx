@@ -24,11 +24,8 @@ export default async function TweetEmbed({
   }
 
   return (
-    <figure className="tweet-embed-figure border border-misty bg-white" style={{ borderRadius: "var(--radius)" }}>
+    <div className="tweet-embed border border-misty bg-white" style={{ borderRadius: "var(--radius)" }}>
       <EmbeddedTweet tweet={tweet} />
-      <figcaption className="border-t border-misty px-4 py-3 text-xs text-ink/60">
-        Source: @{author} on X
-      </figcaption>
-    </figure>
+    </div>
   );
 }
