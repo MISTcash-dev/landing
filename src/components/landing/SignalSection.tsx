@@ -21,16 +21,9 @@ export default function SignalSection() {
           title="In the wild."
           intro="Independent takes on the protocol, from the people building in the space."
         />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {tweets.map((t, index) => (
-            <div
-              key={t.id}
-              className={
-                index === tweets.length - 1
-                  ? "md:col-span-2 lg:col-span-1 lg:col-start-2"
-                  : undefined
-              }
-            >
+        <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
+          {tweets.map((t) => (
+            <div key={t.id} className="mb-6 break-inside-avoid">
               <TweetEmbed id={t.id} author={t.author} />
             </div>
           ))}
