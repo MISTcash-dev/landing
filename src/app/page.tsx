@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import ProtocolShowcase from "@/components/landing/ProtocolShowcase";
 import ArchitectureSection from "@/components/landing/ArchitectureSection";
@@ -8,7 +7,6 @@ import CompetitiveTable from "@/components/landing/CompetitiveTable";
 import BlogPreview from "@/components/landing/BlogPreview";
 import SignalSection from "@/components/landing/SignalSection";
 import CTASection from "@/components/landing/CTASection";
-import Footer from "@/components/landing/Footer";
 
 export const metadata: Metadata = {
   title: "MIST — Privacy infrastructure by your rules",
@@ -19,18 +17,14 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main id="main-content">
-        <HeroSection />
-        <ProtocolShowcase />
-        <ArchitectureSection />
-        <ProofPointsSection />
-        <CompetitiveTable />
-        <BlogPreview />
-        <SignalSection />
-        <CTASection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <ProtocolShowcase />
+      <ArchitectureSection />
+      <ProofPointsSection />
+      <CompetitiveTable />
+      <BlogPreview />
+      <SignalSection />
+      <CTASection />
     </>
   );
 }

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
 import Badge from "@/components/landing/Badge";
 import { getAllPosts } from "@/lib/blog";
 
@@ -15,10 +13,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <>
-      <Navbar />
-      <main id="main-content" className="min-h-screen">
-        <section className="mist-section py-16 md:py-24">
+    <section className="mist-section py-16 md:py-24">
           <Badge tone="cobalt">Blog</Badge>
           <h1
             className="mt-6 font-display text-4xl font-bold tracking-[-0.02em] text-ink md:text-5xl"
@@ -61,8 +56,5 @@ export default function BlogPage() {
             ))}
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
   );
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
 import Badge from "@/components/landing/Badge";
 import { getAllPosts, getPost, renderMarkdown } from "@/lib/blog";
 
@@ -32,10 +30,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
   const html = renderMarkdown(post.content);
 
   return (
-    <>
-      <Navbar />
-      <main id="main-content" className="min-h-screen">
-        <article className="mist-section max-w-3xl py-16 md:py-24">
+    <article className="mist-section max-w-3xl py-16 md:py-24">
           <Badge tone="cobalt">Blog</Badge>
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-ink/50">
             {post.date}
@@ -56,8 +51,5 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             </Link>
           </p>
         </article>
-      </main>
-      <Footer />
-    </>
   );
 }

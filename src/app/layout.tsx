@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Sen } from "next/font/google";
+import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
 import "./globals.css";
 
 const josefin = Josefin_Sans({
@@ -45,7 +47,11 @@ export default function RootLayout({
         <a href="#main-content" className="skip-nav">
           Skip to content
         </a>
-        {children}
+        <Header />
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
 import Button from "@/components/landing/Button";
 import Badge from "@/components/landing/Badge";
 import SectionHeading from "@/components/landing/SectionHeading";
@@ -53,9 +51,7 @@ const features = [
 export default function TryHidemiPage() {
   return (
     <>
-      <Navbar />
-      <main id="main-content">
-        <section className="border-b border-misty bg-baby">
+      <section className="border-b border-misty bg-baby">
           <div className="mist-section flex flex-col items-start gap-10 py-20 md:py-24 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <Badge tone="cobalt">Consumer app</Badge>
@@ -105,8 +101,6 @@ export default function TryHidemiPage() {
           primary={{ label: "Open Hidemi", href: "https://hidemi.mist.cash" }}
           secondary={{ label: "Read the protocol docs", href: "https://docs.mist.cash" }}
         />
-      </main>
-      <Footer />
-    </>
+      </>
   );
 }

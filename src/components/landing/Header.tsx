@@ -5,14 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Product", href: "#product" },
-  { label: "Architecture", href: "#architecture" },
   { label: "Partners", href: "/partners" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Team", href: "/team" },
 ];
 
-export default function Navbar() {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (

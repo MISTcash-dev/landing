@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
 import Button from "@/components/landing/Button";
 import Badge from "@/components/landing/Badge";
 import SectionHeading from "@/components/landing/SectionHeading";
@@ -138,9 +136,7 @@ const pilotBenefits = [
 export default function PartnersPage() {
   return (
     <>
-      <Navbar />
-      <main id="main-content">
-        <section className="border-b border-misty bg-baby">
+      <section className="border-b border-misty bg-baby">
           <div className="mist-section flex flex-col items-start gap-10 py-20 md:py-28">
             <div className="max-w-2xl">
               <Badge tone="cobalt">Partners</Badge>
@@ -424,8 +420,6 @@ export default function PartnersPage() {
             </p>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+      </>
   );
 }
