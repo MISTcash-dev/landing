@@ -46,7 +46,7 @@ const rows: Row[] = [
   },
   {
     capability: "Anonymity set",
-    mist: "100k+",
+    mist: "Shared",
     mixers: "Variable",
     privacyCoins: "Global",
     onchainZkp: "Variable",
@@ -78,7 +78,7 @@ function CellContent({ value }: { value: CellValue }) {
 
 const competitors = [
   { key: "mist" as const, label: "MIST", highlight: true },
-  { key: "mixers" as const, label: "Mixers", highlight: false },
+  { key: "mixers" as const, label: "Privacy pools", highlight: false },
   { key: "privacyCoins" as const, label: "Privacy coins", highlight: false },
   { key: "onchainZkp" as const, label: "On-chain ZKP", highlight: false },
   { key: "fhe" as const, label: "FHE", highlight: false },
@@ -128,8 +128,9 @@ export default function CompetitiveTable() {
           </table>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/60">
-          Trade-offs are real. Mixers trade compliance for privacy, privacy
-          coins trade ecosystems for anonymity, on-chain ZKP solutions trade
+          Trade-offs are real. Privacy pools trade compliance for privacy,
+          privacy coins trade ecosystems for anonymity, on-chain ZKP solutions
+          trade
           cross-chain reach. MIST is built where none of those trades are
           required.
         </p>

@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import SectionHeading from "./SectionHeading";
 
 export default function BlogPreview() {
-  const posts = getAllPosts().slice(0, 3);
+  const posts = getAllPosts().slice(0, 2);
 
   if (posts.length === 0) return null;
 
@@ -11,7 +11,7 @@ export default function BlogPreview() {
     <section className="border-t border-misty bg-white py-16 md:py-24">
       <div className="mist-section">
         <SectionHeading eyebrow="Blog" title="Latest from the protocol." />
-        <div className="grid gap-px border border-misty bg-misty md:grid-cols-3">
+        <div className="grid gap-px border border-misty bg-misty sm:grid-cols-2">
           {posts.map((post) => (
             <Link
               key={post.slug}

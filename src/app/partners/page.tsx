@@ -1,0 +1,431 @@
+import type { Metadata } from "next";
+import Navbar from "@/components/landing/Navbar";
+import Footer from "@/components/landing/Footer";
+import Button from "@/components/landing/Button";
+import Badge from "@/components/landing/Badge";
+import SectionHeading from "@/components/landing/SectionHeading";
+
+export const metadata: Metadata = {
+  title: "Partners — MIST",
+  description:
+    "Confidential settlement and audit access on the same rail for payment service providers, OTC desks, payroll platforms, treasury teams, and compliance providers.",
+  openGraph: {
+    title: "Partners — MIST",
+    description:
+      "Compliance-native privacy infrastructure for regulated money movement. Apply for the pilot program.",
+    url: "https://mist.cash/partners",
+    type: "website",
+    siteName: "MIST",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Partners — MIST",
+    description:
+      "Build confidential settlement for regulated money movement. Apply for the MIST pilot program.",
+    site: "@mistcash",
+  },
+};
+
+const audiences = [
+  {
+    title: "Payment service providers and processors",
+    quote:
+      "Settle on-chain without exposing merchant flows or transaction economics.",
+    detail:
+      "Competitors and counterparties can infer volumes, pricing, and merchant relationships from on-chain flow.",
+  },
+  {
+    title: "OTC desks and prime brokers",
+    quote:
+      "Keep trade size and counterparties private while staying compliant.",
+    detail:
+      "Large trades leak size and counterparty on a public chain, creating market impact and front-running risk.",
+  },
+  {
+    title: "Payroll platforms",
+    quote: "Pay employees on-chain without exposing compensation data.",
+    detail:
+      "Compensation data is sensitive by default, and customer trust depends on keeping it that way.",
+  },
+  {
+    title: "Corporate treasury and intercompany finance",
+    quote:
+      "Move funds internally without signaling cash position or counterparties.",
+    detail:
+      "Cash positions and internal transfers signal strategy and liquidity to anyone watching the chain.",
+  },
+  {
+    title: "Banks and fintechs doing stablecoin payments",
+    quote: "Use public-chain settlement with private transaction data.",
+    detail:
+      "Want the efficiency of public chain settlement without exposing customer transaction data.",
+  },
+];
+
+const settlementFeatures = [
+  "Selective disclosure and protected sender, recipient, and amount, so counterparties and competitors can't reconstruct your flow.",
+  "Permissioned access and identity controls, so you decide who can see what, and when.",
+  "Audit logs and proof of validity that satisfy internal controls and regulators, without putting personal or commercial data on-chain.",
+  "KYC/AML and wallet screening that integrate with your existing compliance stack, not a separate one.",
+  "Wallet to wallet privacy, partial withdrawals, and private transaction forwarding, ready to integrate via SDK/API.",
+  "Proofs generate in about one second on a phone and settle for cents, not the multi-dollar cost of running your own ZK stack.",
+  "Cross-chain support today is USDC over CCTP on all supported networks.",
+];
+
+const reserveFeatures = [
+  "Deploy your KYC, AML, or jurisdiction logic as a Reserve with its own ZK proof, fully isolated from every other compliance pool on the network.",
+  "Earn a share of volume moving through your Reserve, not just a flat fee at signup.",
+  "Your Reserve's funds and risk profile stay separated from unregulated or differently regulated pools, so one bad actor elsewhere on the network never touches your users' trust scores.",
+  "Ship a MIST ID product for KYC without building settlement infrastructure yourself.",
+];
+
+const howItWorks = [
+  {
+    name: "The Chamber",
+    role: "Settlement engine",
+    detail:
+      "The core settlement engine. It never touches assets, it just tracks who owns what, privately.",
+  },
+  {
+    name: "Reserves",
+    role: "Where rules live",
+    detail:
+      "A KYC Reserve, an AML Reserve, and an unregulated Reserve can all run on the same network at the same time, fully walled off from each other.",
+  },
+  {
+    name: "Middleware",
+    role: "Where custom logic runs",
+    detail:
+      "Your compliance checks, your claiming conditions, your audit hooks, composed into a single proof instead of stacked one by one.",
+  },
+];
+
+const whyNow = [
+  {
+    value: "First ZK proof on Starknet",
+    detail: "Shipped by the team now building MIST.",
+  },
+  {
+    value: "Hidemi live",
+    detail: "MIST's first consumer app, launched January 2026.",
+  },
+  {
+    value: "2026 roadmap",
+    detail:
+      "Three networks live, MIST ID for KYC, sub-2-cent proofs, onboarding for stablecoin payment providers.",
+  },
+  {
+    value: "Built by protocol engineers",
+    detail:
+      "Contributors to Aztec, Gnark, World ProveKit, and Arkworks Algebra, who worked directly with the government of Singapore on the compliance problem this solves.",
+  },
+];
+
+const pilotCriteria = [
+  "You already move value on-chain, or plan to within 6 to 12 months.",
+  "You have a clear confidentiality problem around sender, recipient, amount, balances, or business terms.",
+  "You need regulator-friendly auditability, not full anonymity.",
+  "You can describe who must see what, and under what conditions.",
+  "You own budget in payments, treasury, trading ops, product, or compliance.",
+];
+
+const pilotBenefits = [
+  "Direct integration support from the core protocol team.",
+  "Input into which compliance modules and chains we prioritize next.",
+  "Priority terms on revenue share once your Reserve goes live.",
+];
+
+export default function PartnersPage() {
+  return (
+    <>
+      <Navbar />
+      <main id="main-content">
+        <section className="border-b border-misty bg-baby">
+          <div className="mist-section flex flex-col items-start gap-10 py-20 md:py-28">
+            <div className="max-w-2xl">
+              <Badge tone="cobalt">Partners</Badge>
+              <h1
+                className="mt-6 font-display text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-ink md:text-6xl"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Settle on-chain without exposing who, what, or how much.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg text-ink/70">
+                MIST is compliance-native privacy infrastructure for regulated
+                money movement. Confidential settlement, selective disclosure,
+                and audit access on the same rail, so you get privacy from
+                competitors and counterparties without losing the trail
+                regulators expect.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button href="mailto:shramee@mist.cash" size="lg" variant="primary">
+                  Apply for the Pilot Program
+                </Button>
+                <Button href="mailto:shramee@mist.cash" size="lg" variant="secondary">
+                  Talk to the team
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="The problem"
+              title="Public ledgers leak what your settlement should not."
+              intro="Stablecoins moved $30 trillion last year on fully public ledgers. If you are moving value on-chain today, your transaction sizes, counterparties, and flow patterns are visible to anyone watching, including competitors and the merchants or partners you settle with."
+            />
+            <p className="mx-auto max-w-3xl text-center text-ink/70">
+              Buyers in this position do not want full anonymity, that invites
+              exactly the regulatory scrutiny they are trying to avoid. What
+              they need is regulator-friendly auditability without exposing
+              commercially sensitive data: confidentiality, compliance, and
+              operability together, not traded off against each other.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-misty bg-white py-16 md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="Who MIST is built for"
+              title="The pain is different per desk."
+              intro="Ranked by how soon the pain translates into budget."
+            />
+            <div className="grid gap-px border border-misty bg-misty md:grid-cols-2 lg:grid-cols-3">
+              {audiences.map((audience) => (
+                <article key={audience.title} className="bg-white p-7">
+                  <h3 className="mist-h3 text-ink">{audience.title}</h3>
+                  <p className="mt-3 text-sm font-semibold text-ink">
+                    {audience.quote}
+                  </p>
+                  <p className="mt-3 text-sm text-ink/70">{audience.detail}</p>
+                </article>
+              ))}
+            </div>
+            <p className="mx-auto mt-10 max-w-3xl text-center text-ink/70">
+              If you already move value on-chain, or plan to within 6 to 12
+              months, and you can describe who needs to see what and under what
+              conditions, you are likely a fit.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-misty bg-baby py-16 md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="Two ways to build with MIST"
+              title="Settlement rails, or compliance modules that earn."
+            />
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              <article className="border border-misty bg-white p-8">
+                <h3 className="mist-h2 text-ink">
+                  For payment providers, OTC desks, payroll, and treasury
+                </h3>
+                <p className="mt-3 text-ink/70">
+                  Add confidential settlement to the rails you already run,
+                  without building a privacy stack from scratch.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {settlementFeatures.map((feature) => (
+                    <li key={feature} className="flex gap-3 text-sm text-ink/80">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="var(--color-cobalt)"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-0.5 shrink-0"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className="border border-misty bg-white p-8">
+                <h3 className="mist-h2 text-ink">
+                  For compliance and KYC/AML providers
+                </h3>
+                <p className="mt-3 text-ink/70">
+                  Turn a one-time onboarding check into a recurring revenue
+                  line.
+                </p>
+                <p className="mt-3 text-ink/70">
+                  Every buyer above needs KYC/AML integration and audit access
+                  as a baseline requirement, not an add-on. Most compliance
+                  vendors charge once when a user onboards, then the
+                  relationship ends. MIST&apos;s architecture lets you run your
+                  own compliance module, called a Reserve, directly inside the
+                  settlement layer. Every transaction that passes through your
+                  Reserve carries your KYC membership proof, your jurisdiction
+                  check, or your own custom rule set, and every one of those
+                  transactions is a revenue event for you.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {reserveFeatures.map((feature) => (
+                    <li key={feature} className="flex gap-3 text-sm text-ink/80">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="var(--color-cobalt)"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-0.5 shrink-0"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-misty bg-white py-16 md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="How it works"
+              title="One network, three parts that never mix."
+            />
+            <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-2 md:flex-row md:items-stretch">
+              {howItWorks.map((layer, i) => (
+                <div key={layer.name} className="flex flex-1 flex-col gap-2 md:flex-row md:items-stretch">
+                  {i > 0 && (
+                    <div className="flex items-center justify-center px-0 text-ink/40 md:px-1" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </div>
+                  )}
+                  <article className="flex-1 border border-misty bg-baby p-6">
+                    <h3 className="mist-h3 text-ink">{layer.name}</h3>
+                    <p className="mist-eyebrow mt-1 text-cobalt">{layer.role}</p>
+                    <p className="mt-3 text-sm text-ink/70">{layer.detail}</p>
+                  </article>
+                </div>
+              ))}
+            </div>
+            <p className="mx-auto mt-10 max-w-3xl text-center text-ink/70">
+              The result: a consumer gets full privacy on their swap, a payment
+              provider or treasury desk gets a full audit trail on its
+              settlement, and a compliance provider gets paid on every
+              transaction that clears their Reserve, all on the same rail.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-ink py-16 text-baby md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="Why now"
+              title="The proof points are already on-chain."
+            />
+            <div className="grid gap-px border border-misty bg-misty md:grid-cols-2 lg:grid-cols-4">
+              {whyNow.map((point) => (
+                <article key={point.value} className="bg-ink p-7">
+                  <h3 className="text-2xl font-bold tracking-[-0.01em] text-baby">
+                    {point.value}
+                  </h3>
+                  <p className="mt-3 text-sm text-baby/70">{point.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-misty bg-baby py-16 md:py-24">
+          <div className="mist-section">
+            <SectionHeading
+              eyebrow="Pilot Program"
+              title="Build the first live Reserves on MIST."
+              intro="We are onboarding a small group of payment providers, trading desks, treasury teams, and compliance partners to build the first live Reserves on MIST."
+            />
+            <div className="grid gap-6 lg:grid-cols-2">
+              <article className="border border-misty bg-white p-8">
+                <h3 className="mist-h2 text-ink">This is for you if</h3>
+                <ul className="mt-6 space-y-3">
+                  {pilotCriteria.map((criterion) => (
+                    <li key={criterion} className="flex gap-3 text-sm text-ink/80">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="var(--color-cobalt)"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-0.5 shrink-0"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>{criterion}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+              <article className="border border-misty bg-white p-8">
+                <h3 className="mist-h2 text-ink">Pilot partners get</h3>
+                <ul className="mt-6 space-y-3">
+                  {pilotBenefits.map((benefit) => (
+                    <li key={benefit} className="flex gap-3 text-sm text-ink/80">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="var(--color-cobalt)"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-0.5 shrink-0"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+            <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Button href="mailto:shramee@mist.cash" size="lg" variant="primary">
+                Apply for the Pilot Program
+              </Button>
+              <Button href="mailto:shramee@mist.cash" size="lg" variant="secondary">
+                Talk to the team
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-misty bg-white py-16 md:py-20">
+          <div className="mist-section flex flex-col items-center gap-4 text-center">
+            <h2 className="mist-h2 text-ink">Talk to the team.</h2>
+            <p className="max-w-xl text-ink/70">
+              shramee@mist.cash · Telegram @shramee · X @shrameetweets
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

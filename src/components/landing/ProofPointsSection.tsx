@@ -14,12 +14,18 @@ const stats = [
     detail: "Current cost per transaction, heading toward a <2¢ target.",
   },
   {
-    value: "6 chains",
-    detail: "Ethereum, Base, Arbitrum, Optimism, Polygon, and StarkNet.",
+    value: "USDC via CCTP",
+    detail:
+      "Cross-chain USDC on every network CCTP supports. Scope is USDC today, not arbitrary assets.",
   },
   {
-    value: "100k+",
-    detail: "Anonymity set — the pool each proof draws its claim from.",
+    value: "USDT via usdt0",
+    detail: "Planned down the road, not live yet.",
+  },
+  {
+    value: "Shared anonymity set",
+    detail:
+      "Designed so users across chains draw from one set, not a pool per chain. Size grows with usage, not live yet.",
   },
 ];
 
@@ -41,7 +47,7 @@ export default function ProofPointsSection() {
               <p className="mt-3 text-sm text-baby/70">{stat.detail}</p>
             </article>
           ))}
-          <article className="flex items-center justify-center bg-ink p-7">
+          <article className="flex items-center justify-center bg-ink p-7 md:col-span-2 lg:col-span-3">
             <p className="max-w-[30ch] text-sm font-semibold text-baby">
               Every figure is specified on-chain or in the protocol spec.
             </p>

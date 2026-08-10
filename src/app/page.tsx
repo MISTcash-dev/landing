@@ -6,6 +6,7 @@ import ArchitectureSection from "@/components/landing/ArchitectureSection";
 import ProofPointsSection from "@/components/landing/ProofPointsSection";
 import CompetitiveTable from "@/components/landing/CompetitiveTable";
 import BlogPreview from "@/components/landing/BlogPreview";
+import SignalSection from "@/components/landing/SignalSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
         <ProofPointsSection />
         <CompetitiveTable />
         <BlogPreview />
+        <SignalSection />
         <CTASection />
       </main>
       <Footer />

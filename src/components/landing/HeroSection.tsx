@@ -2,10 +2,10 @@ import Button from "./Button";
 import Badge from "./Badge";
 
 const proofPoints = [
-  { value: "100k+", label: "anonymity set" },
-  { value: "6", label: "chains supported" },
+  { value: "USDC", label: "via CCTP networks" },
   { value: "~1s", label: "proof on an iPhone" },
   { value: "<2¢", label: "cost target per tx" },
+  { value: "ZK", label: "recursive proofs" },
 ];
 
 export default function HeroSection() {

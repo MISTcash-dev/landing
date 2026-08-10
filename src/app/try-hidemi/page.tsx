@@ -9,11 +9,11 @@ import CTASection from "@/components/landing/CTASection";
 export const metadata: Metadata = {
   title: "Try Hidemi — Private transfers on MIST",
   description:
-    "Hidemi is a consumer app built on the MIST protocol. Send and receive USDC privately across 6 chains with ZK-proof privacy.",
+    "Hidemi is a consumer app built on the MIST protocol. Send and receive USDC privately across CCTP networks with ZK-proof privacy.",
   openGraph: {
     title: "Try Hidemi — Private transfers on MIST",
     description:
-      "A consumer app on the MIST protocol. Send and receive USDC privately across chains.",
+      "A consumer app on the MIST protocol. Send and receive USDC privately across CCTP networks.",
     url: "https://mist.cash/try-hidemi",
     type: "website",
     siteName: "MIST",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Try Hidemi — Private transfers on MIST",
     description:
-      "Send and receive USDC privately across 6 chains. Powered by MIST ZK proofs.",
+      "Send and receive USDC privately across CCTP networks. Powered by MIST ZK proofs.",
     site: "@mistcash",
   },
 };
@@ -34,9 +34,9 @@ const features = [
       "Every transfer proves validity with a ZK proof. No one — including the operator — sees sender, receiver, or amount.",
   },
   {
-    title: "Six chains, one app",
+    title: "Cross-chain USDC",
     detail:
-      "Send and receive USDC across Ethereum, Base, Arbitrum, Optimism, Polygon, and StarkNet from a single interface.",
+      "Send and receive USDC across every network CCTP supports, from a single interface.",
   },
   {
     title: "No signup, no history",
@@ -67,8 +67,8 @@ export default function TryHidemiPage() {
               </h1>
               <p className="mt-6 max-w-xl text-lg text-ink/70">
                 Hidemi is the consumer app built on the MIST protocol. No
-                signup, no wallet history — just private, provable transfers
-                across six chains.
+                signup, no wallet history — just private, provable USDC
+                transfers across CCTP networks.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="https://hidemi.mist.cash" size="lg" variant="primary">
@@ -101,7 +101,7 @@ export default function TryHidemiPage() {
 
         <CTASection
           heading="Try Hidemi."
-          body="Hidemi is the consumer app built on MIST: send and receive USDC privately across six chains, no signup, no wallet history."
+          body="Hidemi is the consumer app built on MIST: send and receive USDC privately across CCTP networks, no signup, no wallet history."
           primary={{ label: "Open Hidemi", href: "https://hidemi.mist.cash" }}
           secondary={{ label: "Read the protocol docs", href: "https://docs.mist.cash" }}
         />

@@ -48,8 +48,11 @@ export default function ProtocolShowcase() {
           intro="MIST is infrastructure first. Operators and integrators compose these capabilities into their own products."
         />
         <div className="grid gap-px border border-misty bg-misty md:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map((cap) => (
-            <article key={cap.title} className="bg-white p-7">
+          {capabilities.map((cap, i) => (
+            <article
+              key={cap.title}
+              className={`bg-white p-7${i === capabilities.length - 1 ? " md:col-span-2" : ""}`}
+            >
               <h3 className="mist-h3 text-ink">{cap.title}</h3>
               <p className="mt-3 text-sm text-ink/70">{cap.mechanism}</p>
               <p className="mt-3 border-t border-misty pt-3 text-sm font-semibold text-ink">

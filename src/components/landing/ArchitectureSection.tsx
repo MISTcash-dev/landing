@@ -53,6 +53,11 @@ export default function ArchitectureSection() {
           settles against the Reserve. Every step is provable; nothing is
           visible by default.
         </p>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-ink/60">
+          Cross-chain support today is USDC over CCTP on all supported networks.
+          The legacy Starknet deployment covered six specified networks. USDT
+          over usdt0 is on the roadmap.
+        </p>
       </div>
     </section>
   );
