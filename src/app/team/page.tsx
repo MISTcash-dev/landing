@@ -7,7 +7,7 @@ import Button from "@/components/landing/Button";
 export const metadata: Metadata = {
   title: "Team — MIST",
   description:
-    "MIST is built by one founder: 12 years of engineering, the first ZK proof on Starknet, and a decade of contributions across Gnark, Aztec, and more.",
+    "MIST is built by one founder: 12 years of engineering, the first zero-knowledge proof on Starknet, and a decade of contributions across privacy and proving systems.",
 };
 
 const story = [

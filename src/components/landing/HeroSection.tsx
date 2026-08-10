@@ -3,9 +3,9 @@ import Badge from "./Badge";
 
 const proofPoints = [
   { value: "USDC", label: "via CCTP networks" },
-  { value: "~1s", label: "proof on an iPhone" },
-  { value: "<2¢", label: "cost target per tx" },
-  { value: "ZK", label: "outer-wrapped proofs" },
+  { value: "~1s", label: "privacy check on a phone" },
+  { value: "<2¢", label: "target cost per transfer" },
+  { value: "ZK", label: "privacy by mathematics" },
 ];
 
 export default function HeroSection() {
@@ -21,9 +21,10 @@ export default function HeroSection() {
             Privacy infrastructure by your rules.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink/70">
-            MIST is a multi-chain privacy framework for blockchain payments. A
-            programmable ZK-proof protocol for private asset transfers, with
-            composable middleware and a compliance path.
+            MIST gives payment protocols a private way to move assets across
+            networks. Partners can set their own transaction rules and provide
+            evidence to authorized reviewers without putting sensitive details
+            on a public ledger.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="https://docs.mist.cash" size="lg" variant="primary">

@@ -6,11 +6,11 @@ import SectionHeading from "@/components/landing/SectionHeading";
 export const metadata: Metadata = {
   title: "Partners — MIST",
   description:
-    "Private asset state, Reserve-scoped compliance proofs, and selective disclosure for payment providers, trading desks, treasury teams, and compliance partners.",
+    "Private payment records, Reserve-based compliance requirements, and selective disclosure for payment providers, trading desks, treasury teams, and compliance partners.",
   openGraph: {
     title: "Partners — MIST",
     description:
-      "Private asset state and Reserve-scoped compliance proofs for regulated money movement. Apply for the pilot program.",
+      "Private payment records, Reserve-based compliance requirements, and controlled review for regulated money movement. Apply for the pilot program.",
     url: "https://mist.cash/partners",
     type: "website",
     siteName: "MIST",
@@ -61,46 +61,46 @@ const audiences = [
 ];
 
 const settlementFeatures = [
-  "Private note contents and transaction fields stay out of the clear, while an authorized operator or auditor can derive a key for selective per-transaction disclosure.",
-  "Fixed-width encrypted records keep input notes, beneficiary data, and discovery data from revealing record counts or reserve shape on-chain.",
-  "Secondary circuits can carry KYC membership, jurisdiction checks, auditor commitments, and amount constraints into the primary Chamber proof.",
-  "Chamber proves value conservation and nullifiers; a Reserve moves assets only when the proof authorizes an on-chain withdrawal.",
-  "Contract withdrawals can carry a circuit-bound payload for protocol-specific calls; the middleware defines its meaning.",
-  "Proof generation has been measured at about one second on an iPhone, while current product cost is about five cents with a lower target.",
-  "Current product scope is USDC over CCTP-supported networks; the core transaction model remains single-asset per transaction.",
+  "Keep payment details private from competitors and counterparties, while giving an authorized reviewer evidence for a specific transaction.",
+  "Protect sender, recipient, amount, and payment context instead of publishing the full commercial relationship on-chain.",
+  "Add KYC status, jurisdiction, approval, and amount rules to the payment flow without publishing the underlying customer record.",
+  "Keep funds in a defined Reserve policy so the partner responsible for the funds and the applicable controls are clear.",
+  "Connect private withdrawals to an existing product or contract while keeping the requested action fixed through settlement.",
+  "Privacy checks have been measured at about one second on an iPhone; current product cost is about five cents with a lower target.",
+  "Current product scope is USDC over CCTP-supported networks; each payment uses one asset and one Reserve policy.",
 ];
 
 const reserveFeatures = [
-  "Deploy KYC membership, AML, jurisdiction, auditor-commitment, or amount-constraint logic as a Reserve proof checked alongside the Chamber proof.",
-  "Keep assets governed by one compliance rule set in a separate Reserve contract from unregulated or differently regulated funds.",
-  "Because Reserve custody is separated, activity in one Reserve does not automatically govern or contaminate the asset pool in another.",
-  "A recurring-volume or revenue-share arrangement is a proposed pilot model, not a protocol guarantee.",
+  "Turn your KYC, AML, jurisdiction, approval, or amount rules into requirements a payment must satisfy.",
+  "Keep funds governed by your policy in a separate Reserve from unregulated or differently regulated funds.",
+  "Make it easier to explain which funds passed which controls, without making every other pool inherit the same policy.",
+  "Revenue share or recurring-volume terms can be agreed in the pilot; they are commercial terms, not protocol behavior.",
 ];
 
 const howItWorks = [
   {
     name: "The Chamber",
-    role: "State engine",
+    role: "Private payment record",
     detail:
-      "Chamber stores transaction notes, nullifiers, and middleware state roots. It governs ownership state but never holds assets.",
+      "Chamber keeps track of private balances and confirms that payments follow the agreed rules. It never holds the funds.",
   },
   {
     name: "Reserves",
-    role: "Isolated asset custody",
+    role: "Funds under a defined policy",
     detail:
-      "Each Reserve is a specialized middleware with an asset-holding contract and its own compliance and exit rules.",
+      "Each Reserve holds assets for one policy group, such as KYC-approved, AML-screened, or unrestricted funds.",
   },
   {
     name: "Middleware",
-    role: "Custom proof logic",
+    role: "Partner controls",
     detail:
-      "Middleware proofs extend Chamber transactions with private-flow rules, state-map access, exit conditions, and contract payloads.",
+      "Middleware adds the partner’s limits, approvals, eligibility checks, release conditions, and integration instructions.",
   },
 ];
 
 const whyNow = [
   {
-    value: "First ZK proof on Starknet",
+    value: "First privacy proof on Starknet",
     detail: "A documented founder milestone from July 2024, implemented in Garaga.",
   },
   {
@@ -108,9 +108,9 @@ const whyNow = [
     detail: "MIST's first consumer app, launched January 2026.",
   },
   {
-    value: "Outer-wrapped Groth16",
+    value: "Combined verification",
     detail:
-      "The selected architecture combines primary and secondary proofs in one outer proof, with aggregation as an explicit integration dependency.",
+      "Payment validity and partner requirements can be checked together before settlement, with the final proving work handled by the selected deployment model.",
   },
   {
     value: "USDC via CCTP",
@@ -148,9 +148,9 @@ export default function PartnersPage() {
               </h1>
               <p className="mt-6 max-w-xl text-lg text-ink/70">
                 MIST is privacy infrastructure for regulated money movement.
-                Private note state, Reserve-scoped compliance proofs, and
-                selective per-transaction disclosure help protect commercial
-                context without removing an audit path.
+                Private payment records, Reserve-based requirements, and
+                selective transaction review help protect commercial context
+                without removing an audit path.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="mailto:shramee@mist.cash" size="lg" variant="primary">
@@ -251,17 +251,16 @@ export default function PartnersPage() {
                   For compliance and KYC/AML providers
                 </h3>
                 <p className="mt-3 text-ink/70">
-                  Extend an existing compliance workflow into private settlement
-                  proofs.
+                  Extend an existing compliance workflow into private settlement.
                 </p>
                 <p className="mt-3 text-ink/70">
-                  MIST lets a compliance provider define a Reserve with its own
-                  proof requirements. A transaction can carry a KYC membership,
-                  jurisdiction check, auditor commitment, or custom amount rule
-                  into the combined proof, while the sensitive record stays
-                  encrypted and selectively disclosable per transaction. Any
-                  commercial arrangement around Reserve volume belongs in the
-                  pilot agreement, not in the protocol guarantee.
+                  MIST lets a compliance provider define the requirements for a
+                  Reserve. A payment can be required to satisfy KYC status,
+                  jurisdiction, approval, or amount rules while the underlying
+                  customer record stays private. An authorized reviewer can
+                  receive evidence for a specific transaction. Any commercial
+                  arrangement around Reserve volume belongs in the pilot
+                  agreement, not in the payment system itself.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {reserveFeatures.map((feature) => (
@@ -293,7 +292,7 @@ export default function PartnersPage() {
           <div className="mist-section">
             <SectionHeading
               eyebrow="How it works"
-              title="One state engine, isolated Reserves, composable proofs."
+              title="One private payment record, separate policy pools."
             />
             <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-2 md:flex-row md:items-stretch">
               {howItWorks.map((layer, i) => (
@@ -314,11 +313,10 @@ export default function PartnersPage() {
               ))}
             </div>
             <p className="mx-auto mt-10 max-w-3xl text-center text-ink/70">
-              The result: a transfer can keep note contents and sensitive
-              fields out of the clear, a payment provider can define the
-              disclosure context its auditors need, and a compliance provider
-              can attach its rules to a separated Reserve. The exact disclosure
-              workflow and commercial terms belong to the integration.
+              The result: a payment provider can protect commercial details,
+              define who may review a transaction, and keep funds separated by
+              policy. The exact review workflow and commercial terms are agreed
+              with each partner.
             </p>
           </div>
         </section>

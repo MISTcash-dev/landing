@@ -3,21 +3,21 @@ import SectionHeading from "./SectionHeading";
 const layers = [
   {
     name: "Chamber",
-    role: "State engine",
+    role: "Payment record",
     detail:
-      "Chamber stores transaction notes, nullifiers, and middleware state roots. It proves and updates ownership state, but never holds assets.",
+      "Chamber keeps the private record of who owns what and confirms that each payment follows the protocol rules. It never holds the funds.",
   },
   {
     name: "Middleware",
-    role: "Custom logic",
+    role: "Partner controls",
     detail:
-      "Middleware proofs extend private transactions with policy, state-map lookups, exit conditions, and contract-specific payloads.",
+      "Middleware is where a partner adds business rules such as limits, approvals, eligibility checks, and release conditions.",
   },
   {
     name: "Reserve",
-    role: "Isolated asset custody",
+    role: "Separate funds and policies",
     detail:
-      "A Reserve is specialized middleware with an asset-holding contract and its own entry, private-flow, and exit rules.",
+      "A Reserve holds the assets and applies one defined set of entry, payment, and withdrawal requirements.",
   },
 ];
 
@@ -27,11 +27,11 @@ export default function ArchitectureSection() {
       <div className="mist-section">
         <SectionHeading
           eyebrow="Architecture"
-          title="One state engine, isolated asset pools, programmable rules."
-          intro="MIST separates transaction state from custom logic and asset custody. Chamber governs movement; Reserves hold assets; Middleware and Reserve proofs add rules."
+          title="A private record, your controls, separate funds."
+          intro="MIST separates the payment record from partner controls and asset custody. Chamber tracks ownership; Middleware applies business rules; Reserves hold funds under a defined policy."
         />
         <div className="mx-auto flex flex-col items-stretch gap-2 md:flex-row md:items-stretch">
-          {layers.map((layer, i) => (
+          {layers.map((layer) => (
             <div key={layer.name} className="flex flex-1 flex-col gap-8 md:flex-row md:items-stretch">
               <article className="flex-1 border border-misty bg-baby p-6">
                 <h3 className="mist-h3 text-ink">{layer.name}</h3>
@@ -42,16 +42,15 @@ export default function ArchitectureSection() {
           ))}
         </div>
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/60">
-          A deposit calls Chamber, which moves assets into a Reserve and adds a
-          note. An in-protocol transfer updates notes and nullifiers without
-          moving assets. A withdrawal updates Chamber and calls the Reserve to
-          send assets to the specified public destination.
+          When funds enter MIST, the Chamber records the private balance and a
+          Reserve holds the assets. Internal payments update private balances
+          without moving funds on-chain. When funds leave, the Chamber checks
+          the payment and the Reserve sends them to the stated destination.
         </p>
         <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-ink/60">
-          Each transaction uses one asset and one Chamber/Reserve boundary. The
-          current product scope is USDC over CCTP on supported networks; the
-          core transaction model does not itself specify cross-chain movement.
-          USDT over usdt0 is on the roadmap.
+          Each payment uses one asset and one Reserve policy. Hidemi currently
+          supports USDC across CCTP networks. Broader cross-network movement is
+          a separate product layer, and USDT via usdt0 is planned.
         </p>
       </div>
     </section>

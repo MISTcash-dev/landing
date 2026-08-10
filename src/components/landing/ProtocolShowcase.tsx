@@ -2,39 +2,39 @@ import SectionHeading from "./SectionHeading";
 
 const capabilities = [
   {
-    title: "Private state transitions",
+    title: "Private transfers",
     mechanism:
-      "The primary circuit proves note membership, ownership, value conservation, and nullifiers without exposing note contents.",
+      "MIST verifies that a transfer is funded, authorized, and balanced without publishing the underlying payment details.",
     payoff:
-      "In-protocol transfers pool and redistribute notes; assets move only when a withdrawal calls a Reserve.",
+      "Partners can move value between private balances without exposing their full payment position on-chain.",
   },
   {
-    title: "Custom middleware rules",
+    title: "Your rules, in the payment flow",
     mechanism:
-      "Middleware proofs extend Chamber transactions with private-flow rules, exit conditions, and state-map lookups.",
+      "Operators can add limits, approval requirements, and release conditions to transfers and withdrawals.",
     payoff:
-      "Operators can compose policy logic against committed state without exposing the values or indexes the proof accesses.",
+      "Your policy stays part of the transaction rather than becoming a manual review after the fact.",
   },
   {
-    title: "Compliance paths",
+    title: "Compliance with controlled disclosure",
     mechanism:
-      "Secondary circuits can prove KYC membership, jurisdiction checks, auditor commitments, and amount constraints.",
+      "A transaction can carry evidence of KYC status, jurisdiction, audit approval, or amount limits without publishing the underlying record.",
     payoff:
-      "Sensitive fields can be encrypted inside the proof, with a per-transaction disclosure key for an authorized operator or auditor.",
+      "Authorized reviewers can receive the evidence for a specific transaction instead of getting unrestricted access to the whole flow.",
   },
   {
-    title: "Asset-scoped settlement",
+    title: "Clear asset boundaries",
     mechanism:
-      "Each transaction conserves one asset across two input notes, two output notes, or an optional withdrawal.",
+      "Each transfer accounts for one asset within one Chamber and Reserve combination.",
     payoff:
-      "The protocol keeps accounting and collateralization within one Chamber and Reserve boundary at a time.",
+      "Funds governed by different policies remain separated, making ownership and compliance responsibilities easier to define.",
   },
   {
-    title: "Programmable integration",
+    title: "Built for integration",
     mechanism:
-      "A circuit-bound tx_payload can carry instructions for a contract withdrawal; its contents and meaning belong to the middleware.",
+      "Withdrawals can carry instructions for the receiving contract, with the transaction binding those instructions before settlement.",
     payoff:
-      "Integrators can connect private withdrawals to protocol-specific calls without letting a relayer alter the payload.",
+      "Partners can connect private payments to their existing products without giving a relayer room to change the requested action.",
   },
 ];
 

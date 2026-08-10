@@ -2,31 +2,31 @@ import SectionHeading from "./SectionHeading";
 
 const stats = [
   {
-    value: "First ZK proof",
+    value: "First privacy proof",
     detail: "Produced on Starknet in July 2024, via a Garaga implementation.",
   },
   {
     value: "~1s",
-    detail: "Measured proof generation on an iPhone; this is a performance benchmark, not a protocol invariant.",
+    detail: "Measured privacy-check generation on an iPhone; a benchmark, not a guarantee for every deployment.",
   },
   {
     value: "~5¢",
     detail: "Current product cost benchmark, heading toward a <2¢ target.",
   },
   {
-    value: "Outer-wrapped Groth16",
+    value: "One combined check",
     detail:
-      "The selected implementation decouples the primary and secondary proofs, then recursively verifies them in one outer proof.",
+      "MIST can combine payment validity and partner rules into one check for settlement, with the final proving work handled by the selected deployment model.",
   },
   {
     value: "USDC via CCTP",
     detail:
-      "Current product scope is cross-chain USDC over CCTP-supported networks; the core transaction model remains asset-scoped.",
+      "Current product scope is cross-network USDC over CCTP-supported networks; each payment still uses one asset and one Reserve policy.",
   },
   {
-    value: "Reserve-scoped exits",
+    value: "Controlled disclosure",
     detail:
-      "In-protocol transfers can share the protocol set; withdrawal privacy and compliance scope follow the Reserve holding the asset.",
+      "A reviewer can receive evidence for a specific transaction without receiving unrestricted access to the full payment flow.",
   },
 ];
 
@@ -35,9 +35,9 @@ export default function ProofPointsSection() {
     <section className="border-t border-ink bg-ink py-16 text-baby md:py-24">
       <div className="mist-section">
         <SectionHeading
-          eyebrow="Technical proof points"
-          title="Numbers, not adjectives."
-          intro="Measured milestones from the protocol's operating history."
+          eyebrow="What is measured"
+          title="Evidence, not adjectives."
+          intro="Benchmarks and milestones that show what the system can do."
         />
         <div className="grid gap-px border border-misty bg-misty md:grid-cols-2 lg:grid-cols-3">
           {stats.map((stat) => (
@@ -50,7 +50,7 @@ export default function ProofPointsSection() {
           ))}
           <article className="flex items-center justify-center bg-ink p-7 md:col-span-2 lg:col-span-3">
             <p className="max-w-[42ch] text-sm font-semibold text-baby">
-              Benchmarks, targets, product scope, and protocol design are labeled separately so integrators can tell what is live, measured, or planned.
+              Benchmarks, targets, current product scope, and planned capabilities are labeled separately so partners can tell what is available today.
             </p>
           </article>
         </div>

@@ -7,7 +7,7 @@ import CTASection from "@/components/landing/CTASection";
 export const metadata: Metadata = {
   title: "Try Hidemi — Private transfers on MIST",
   description:
-    "Hidemi is a consumer app built on the MIST protocol. Send and receive USDC privately across CCTP networks with ZK-proof privacy.",
+    "Hidemi is a consumer app built on MIST. Send and receive USDC privately across CCTP networks with cryptographic privacy.",
   openGraph: {
     title: "Try Hidemi — Private transfers on MIST",
     description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Try Hidemi — Private transfers on MIST",
     description:
-      "Send and receive USDC privately across CCTP networks. Powered by MIST ZK proofs.",
+      "Send and receive USDC privately across CCTP networks. Powered by MIST's cryptographic privacy system.",
     site: "@mistcash",
   },
 };
@@ -29,7 +29,7 @@ const features = [
   {
     title: "Private by default",
     detail:
-      "Every transfer proves validity with a ZK proof. Note contents stay private in the circuit; on-chain withdrawals still publish the destination and withdrawal fields required for settlement.",
+      "Every transfer is checked without publishing its private payment details. A withdrawal still publishes the destination and settlement information required to send funds on-chain.",
   },
   {
     title: "Cross-chain USDC",
@@ -39,12 +39,12 @@ const features = [
   {
     title: "No signup, no history",
     detail:
-      "There is no account to create and no wallet history to expose. The proof is the credential.",
+      "There is no account to create and no wallet history to expose. The transfer is validated without making a public payment trail.",
   },
   {
     title: "Built on MIST",
     detail:
-      "Hidemi runs on the MIST protocol: programmable ZK proofs, operator rules, and a settlement layer that stays auditable.",
+      "Hidemi runs on MIST: private payment records, partner-defined rules, and a settlement process designed for review.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function TryHidemiPage() {
 
         <CTASection
           heading="Try Hidemi."
-          body="Hidemi is the consumer app built on MIST: send and receive USDC privately across CCTP networks, no signup, no wallet history."
+          body="Hidemi is the consumer app built on MIST: send and receive USDC privately across CCTP networks, with no signup and no public payment trail."
           primary={{ label: "Open Hidemi", href: "https://hidemi.mist.cash" }}
           secondary={{ label: "Read the protocol docs", href: "https://docs.mist.cash" }}
         />

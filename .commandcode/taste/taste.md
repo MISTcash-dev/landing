@@ -1,2 +1,3 @@
 - Prefers connecting their Obsidian vault to coding assistants through an MCP server, using user-level configuration and the existing vault path when possible. Confidence: 0.95
 - Wants website copy verified against authoritative project documentation—especially the technical spec—for protocol accuracy and audience resonance, with inaccurate sections fixed directly in the source. Confidence: 0.95
+- Prefers replacing implementation and code terminology in user-facing copy with clear, understandable business language focused on partner or customer outcomes, while retaining product names and essential technical accuracy. Confidence: 0.98

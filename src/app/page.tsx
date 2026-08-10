@@ -11,7 +11,7 @@ import CTASection from "@/components/landing/CTASection";
 export const metadata: Metadata = {
   title: "MIST — Privacy infrastructure by your rules",
   description:
-    "A programmable ZK-proof protocol for private asset transfers, composable middleware, and Reserve-scoped compliance.",
+    "Privacy infrastructure for private asset transfers, partner-defined payment controls, and selective disclosure.",
 };
 
 export default function Home() {

@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mist.cash"),
   title: "MIST — Privacy infrastructure by your rules",
   description:
-    "A programmable ZK-proof protocol for private asset transfers, composable middleware, and Reserve-scoped compliance.",
+    "Privacy infrastructure for private asset transfers, partner-defined payment controls, and selective disclosure.",
   openGraph: {
     title: "MIST — Privacy infrastructure by your rules",
     description:
-      "Private asset state, composable middleware, and Reserve-scoped compliance proofs for operators and integrators.",
+      "Private payment records, partner-defined controls, and selective disclosure for operators and integrators.",
     type: "website",
     siteName: "MIST",
   },

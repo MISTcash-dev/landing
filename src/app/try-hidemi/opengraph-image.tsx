@@ -60,7 +60,7 @@ export default async function Image() {
 						Privacy infrastructure by your rules.
 					</span>
 					<span style={{ fontSize: 28, color: "#081019", opacity: 0.7, lineHeight: 1.5 }}>
-						Private settlement. Custom middleware. Native compliance.
+						Private payments. Partner-defined controls. Selective disclosure.
 					</span>
 				</div>
 

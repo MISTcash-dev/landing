@@ -45,8 +45,8 @@ const rows: Row[] = [
     fhe: "no",
   },
   {
-    capability: "Anonymity set",
-    mist: "Shared in-protocol; Reserve-scoped exits",
+    capability: "Who can be grouped together",
+    mist: "Shared private payments; separate policy pools",
     privacyPools: "Variable",
     privacyCoins: "Global",
     onchainZkp: "Variable",
@@ -80,7 +80,7 @@ const competitors = [
   { key: "mist" as const, label: "MIST", highlight: true },
   { key: "privacyPools" as const, label: "Privacy pools", highlight: false },
   { key: "privacyCoins" as const, label: "Privacy coins", highlight: false },
-  { key: "onchainZkp" as const, label: "On-chain ZKP", highlight: false },
+  { key: "onchainZkp" as const, label: "On-chain privacy proofs", highlight: false },
   { key: "fhe" as const, label: "FHE", highlight: false },
 ];
 
@@ -91,7 +91,7 @@ export default function CompetitiveTable() {
         <SectionHeading
           eyebrow="Why MIST"
           title="The white space is the intersection."
-          intro="Cross-chain USDC, asset-scoped accounting, and programmable compliance. MIST combines these priorities without hiding the protocol boundaries."
+          intro="Cross-network USDC, clear policy boundaries, and partner-defined compliance. MIST combines these priorities without hiding the operational trade-offs."
         />
         <div className="overflow-x-auto border border-misty bg-white">
           <table className="w-full min-w-[720px] border-collapse text-left">
@@ -128,10 +128,10 @@ export default function CompetitiveTable() {
           </table>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/60">
-          Trade-offs are real. MIST documents its own boundaries: one asset per
-          transaction, one Chamber/Reserve custody boundary, and a separate
-          mechanism required for cross-chain movement. Compare deployments and
-          proof models on their stated guarantees, not category labels alone.
+          Trade-offs are real. MIST keeps each payment tied to one asset and one
+          policy pool, while cross-network movement is handled separately. The
+          important question for a partner is who can review what, under which
+          policy, and at what point in the payment flow.
         </p>
       </div>
     </section>
