@@ -37,6 +37,33 @@ const story = [
   },
 ];
 
+const teamPhotos = [
+  {
+    src: "/events/events-zugrama-zk-state.jpeg", width: 2048, height: 1365,
+    caption: "Zugrama 25 - ZK state transitions"
+  },
+  {
+    src: "/events/events-zuafrique-zk-primitives.jpeg", width: 2048, height: 1365,
+    caption: "Zuafrique 25 - ZK primitives"
+  },
+  {
+    src: "/events/events-muchiangmai-account-abstraction.jpeg", width: 2048, height: 1365,
+    caption: "MuChiangMai 24 - account abstraction"
+  },
+  {
+    src: "/events/events-zugrama-panel.jpeg", width: 2048, height: 1365,
+    caption: "Zugrama 25 - ZK progression panel"
+  },
+  {
+    src: "/events/events-kzg-whiteboard-session.jpeg", width: 2048, height: 1365,
+    caption: "Invisible Garden - KZG whiteboard session"
+  },
+  {
+    src: "/events/events-ig-ba-ecc.jpeg", width: 2048, height: 1365,
+    caption: "Invisible Garden - Elliptic Curve Cryptography"
+  },
+];
+
 export default function TeamPage() {
   return (
     <>
@@ -57,55 +84,43 @@ export default function TeamPage() {
               solvency scare in Singapore that proved the problem.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="mailto:shramee@mist.cash" size="lg" variant="primary">
-                Email Shramee
-              </Button>
-              <Button href="https://x.com/shrameetweets" size="lg" variant="secondary">
+              <Button href="https://x.com/shrameetweets" size="sm" variant="secondary">
                 Follow on X
               </Button>
+              <Button href="https://www.linkedin.com/in/shrameesrivastav" size="sm" variant="secondary">
+                LinkedIn
+              </Button>
+              <Button href="https://www.instagram.com/shramee.srivastav" size="sm" variant="secondary">
+                Instagram
+              </Button>
             </div>
-          </div>
-
-          {/* Placeholder avatar — initials on a white card, Misty border */}
-          <div
-            className="flex h-28 w-28 items-center justify-center border border-misty bg-white"
-            style={{ borderRadius: "var(--radius)" }}
-            aria-hidden="true"
-          >
-            <span className="font-display text-4xl font-bold text-cobalt">
-              S
-            </span>
           </div>
         </div>
       </section>
 
       <section className="border-b border-misty bg-baby py-12 md:py-16">
         <div className="mist-section">
-          <div className="grid gap-6 md:grid-cols-2">
-            <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
-              <Image
-                src="/events/events-zuafrique-zk-primitives.jpeg"
-                alt="Shramee speaking at a ZK privacy event"
-                width={2048}
-                height={1365}
-                className="h-auto w-full"
-              />
-              <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
-                Speaking at a ZK privacy event.
-              </figcaption>
-            </figure>
-            <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
-              <Image
-                src="/events/events-muchiangmai-account-abstraction.jpeg"
-                alt="Shramee speaking at a ZK privacy event"
-                width={2048}
-                height={1536}
-                className="h-auto w-full"
-              />
-              <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
-                Speaking at a ZK privacy event.
-              </figcaption>
-            </figure>
+          <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
+            {teamPhotos.map((photo) => {
+              return (
+                <figure
+                  key={photo.src}
+                  className="mb-6 break-inside-avoid border border-misty bg-white p-2"
+                  style={{ borderRadius: "var(--radius)" }}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.caption}
+                    width={photo.width}
+                    height={photo.height}
+                    className="h-auto w-full"
+                  />
+                  <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
+                    {photo.caption}
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </div>
       </section>
