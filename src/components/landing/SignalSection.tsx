@@ -39,26 +39,26 @@ export default function SignalSection() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
               <Image
-                src="/events/events-zugrama-panel.jpeg"
-                alt="Shramee speaking at a ZK privacy event"
+                src="/events/startup-house-pitch.jpg"
+                alt="Shramee pitching at Startup house"
                 width={2048}
                 height={917}
                 className="h-auto w-full"
               />
               <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
-                Speaking at a ZK privacy event.
+                Shramee pitching at Startup house
               </figcaption>
             </figure>
             <figure className="border border-misty bg-white p-2" style={{ borderRadius: "var(--radius)" }}>
               <Image
-                src="/events/events-zugrama-zk-state.jpeg"
-                alt="Shramee speaking at a ZK privacy event"
+                src="/events/starkspace-buenos-aires-mist-pitch.jpeg"
+                alt="MIST.cash pitch at StarkSpace Buenos Aires"
                 width={2048}
                 height={917}
                 className="h-auto w-full"
               />
               <figcaption className="px-2 pb-1 pt-3 text-sm text-ink/70">
-                Speaking at a ZK privacy event.
+                MIST.cash pitch at StarkSpace Buenos Aires
               </figcaption>
             </figure>
           </div>
